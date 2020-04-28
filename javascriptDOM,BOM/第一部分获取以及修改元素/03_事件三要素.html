@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">李茂茂</button>
+    <script>
+        // 事件三要素
+        // 1.事件源：事件被触发的对象，按钮
+        // 2.事件类型：什么触发，鼠标按下，经过，还是按下键盘
+        // 3.构造事件处理程序，通过函数赋值方法完成
+        var thing = document.getElementById('btn');
+        thing.onclick = function () {
+            alert('喜欢郑思雅')
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .box {
+            position: relative;
+            margin: 50px 0 0 50px;
+            width: 400px;
+            height: 500px;
+            cursor: move;
+        }
+
+        .ptc {
+            width: 400px;
+            height: 500px;
+        }
+
+        .mask {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 220px;
+            height: 220px;
+            background-color: #FF0303;
+            opacity: 0.5;
+        }
+
+        .bg {
+            display: none;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            left: 450px;
+            width: 500px;
+            height: 600px;
+            border: 1px solid #cccccc;
+
+        }
+
+        .bg .bigptc {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 700px;
+            height: 800px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img src="images/z_01.jpg" alt="" class="ptc">
+        <div class="mask"></div>
+        <div class="bg">
+            <img src="images/z_01.jpg" alt="" class="bigptc">
+        </div>
+    </div>
+    <script>
+        var box = document.querySelector('.box');
+        var bg = document.querySelector('.bg');
+        var bigptc = document.querySelector('.bigptc');
+        var mask = document.querySelector('.mask');
+        box.addEventListener('mouseover', function () {
+            mask.style.display = 'block';
+            bg.style.display = 'block';
+        })
+        box.addEventListener('mouseout', function () {
+            mask.style.display = 'none';
+            bg.style.display = 'none';
+        })
+        box.addEventListener('mousemove', function (e) {
+            var x = e.pageX - this.offsetLeft; //鼠标在盒子内的位置
+            var y = e.pageY - this.offsetTop;
+
+
+            var maskX = x - mask.offsetWidth / 2; //阴影块在盒子内的位置
+            var maskY = y - mask.offsetHeight / 2;
+
+
+            var maxX = this.offsetWidth - mask.offsetWidth;
+            var maxY = this.offsetHeight - mask.offsetHeight;
+            if (maskX <= 0) { //让阴影块绑定在盒子内
+                maskX = 0;
+            } else if (maskX >= maxX) {
+                maskX = maxX;
+            }
+            if (maskY <= 0) {
+                maskY = 0;
+            } else if (maskY >= maxY) {
+                maskY = maxY;
+            }
+            mask.style.left = maskX + 'px'; //这个赋值必须放在判断后
+            mask.style.top = maskY + 'px';
+            var bgX = maskX * (bigptc.offsetWidth - bg.offsetWidth) / maxX; //得到大图片需要移动的距离
+            var bgY = maskY * (bigptc.offsetHeight - bg.offsetHeight) / maxY;
+            bigptc.style.left = -bgX + 'px';
+            bigptc.style.top = -bgY + 'px';
+        })
+        console.log(window.location.href); //获得窗口的url地址
+        console.log(window.navigator.userAgent);//当前网页使用浏览器的相关参数
+
+
+    </script>
+</body>
+
+</html>

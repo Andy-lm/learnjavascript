@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>跳转</button>
+    <script>
+        var btn = document.querySelector('button');
+        var second = 5;
+        btn.onclick = function () {
+            btn.disabled = true;
+            btn.innerHTML = '还剩' + second + '秒跳转';
+            var timer = setInterval(function () {
+                if (second == 0) {
+                    window.location = 'https://www.qq.com/';
+                    clearInterval(timer);
+                    second = 5;
+                    btn.disabled = false;
+                } else {
+                    second--;
+                    btn.innerHTML = '还剩' + second + '秒跳转';
+                }
+            }, 1000)
+        }
+    </script>
+</body>
+
+</html>

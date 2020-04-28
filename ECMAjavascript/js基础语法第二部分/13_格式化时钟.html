@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function getTimer() {
+            var time = new Date();
+            var hours = time.getHours();  //当小于十时要前面添加0
+            hours = hours < 10 ? '0' + hours : hours;
+            var minutes = time.getMinutes();
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            var second = time.getSeconds();
+            second = second < 10 ? '0' + second : second;
+            // console.log(typeof second);
+            return hours + ':' + minutes + ':' + second;
+        }
+        console.log(getTimer());
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 在这里使用：数组名.length 参数可以方便减少一个参数
+        // 因为数组中值的数量总比数组的最大索引大1
+        var num = [1, 56, 52, 4, 10, 8];
+        // var j = 0;
+        var list = [];
+        for (var i = 0; i < num.length; i++) {
+            if (num[i] >= 10) {
+                list[list.length] = num[i];
+                // j++;
+            }
+        }
+        alert(list)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

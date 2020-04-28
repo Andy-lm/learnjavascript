@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            position: relative;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            height: 100px;
+            background-color: whitesmoke;
+            border: 1px solid #DEE1E6;
+            outline: none;
+            font-size: 20px;
+            font-weight: 700;
+            color: #5F6368;
+
+        }
+
+        button:active {
+            background-color: white;
+        }
+
+        div,
+        p {
+            width: 300px;
+            height: 100px;
+            margin: 20px auto;
+            background-color: whitesmoke;
+            border: 1px solid #DEE1E6;
+            font-size: 20px;
+            font-weight: 700;
+            text-align: center;
+            line-height: 100px;
+            color: #5F6368;
+        }
+    </style>
+</head>
+
+<body>
+    <button>点击获取当前时间</button>
+    <div>当前时间</div>
+    <p></p>
+    <script>
+        //引入获取时间函数
+        function getTimer() {
+            var time = new Date();
+            var hours = time.getHours();  //当小于十时要前面添加0
+            hours = hours < 10 ? '0' + hours : hours;
+            var minutes = time.getMinutes();
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            var second = time.getSeconds();
+            second = second < 10 ? '0' + second : second;
+            // console.log(typeof second);
+            return hours + ':' + minutes + ':' + second;
+        }
+        // 获取事件源
+        var btn = document.querySelector('button');
+        var box = document.querySelector('div')
+        var p = document.querySelector('p')
+        // 注册事件并构建事件处理函数
+        btn.onclick = function () {
+            box.innerText = getTimer();
+        }
+        // 也可以直接改变其内容,不需要触发方式
+        p.innerText = getTimer();
+    </script>
+</body>
+
+</html>

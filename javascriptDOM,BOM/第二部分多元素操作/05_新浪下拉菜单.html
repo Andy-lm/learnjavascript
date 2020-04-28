@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .nav {
+            width: 600px;
+            margin: 100px auto;
+        }
+
+        .nav>li {
+            float: left;
+            width: 80px;
+            height: 35px;
+            font-size: 14px;
+            text-align: center;
+            line-height: 35px;
+            cursor: pointer;
+
+        }
+
+        li:hover {
+            background-color: #DEE1E6;
+        }
+
+        .nav li ul {
+            display: none;
+        }
+
+        .nav li ul li {
+            width: 78px;
+            height: 35px;
+            border: 1px solid #F76630;
+            border-top: none;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="nav">
+        <li>微博
+            <ul class="push_nav">
+                <li>私信</li>
+                <li>评论</li>
+                <li>@我</li>
+            </ul>
+        </li>
+        <li>微博
+            <ul class="push_nav">
+                <li>私信</li>
+                <li>评论</li>
+                <li>@我</li>
+            </ul>
+        </li>
+        <li>微博
+            <ul class="push_nav">
+                <li>私信</li>
+                <li>评论</li>
+                <li>@我</li>
+            </ul>
+        </li>
+        <li>微博
+            <ul class="push_nav">
+                <li>私信</li>
+                <li>评论</li>
+                <li>@我</li>
+            </ul>
+        </li>
+    </ul>
+    <script>
+        var nav = document.querySelector('.nav');
+        var lis = nav.children; //获得.nav的所有孩子
+        console.log(lis); //我们只需使用它的第一个孩子
+
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].onmouseover = function () {
+                this.children[0].style.display = 'block';
+            }
+            lis[i].onmouseout = function () {
+                this.children[0].style.display = 'none';
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

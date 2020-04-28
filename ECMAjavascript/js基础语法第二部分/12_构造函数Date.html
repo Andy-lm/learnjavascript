@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var date = new Date(2020, 4, 4);
+        console.log(date);
+        var date1 = new Date('2020-04-04 20:10:00')
+        console.log(date1);
+        var date2 = new Date();
+        console.log(date2);
+
+        // 日期的格式化
+        var date_par = new Date();
+        var year = date_par.getFullYear();
+        var month = date_par.getMonth(); //0~11月
+        var day = date_par.getDate();
+        var week = date_par.getDay(); //星期日~星期六
+        var hours = date_par.getHours();
+        var minutes = date_par.getMinutes();
+        var second = date_par.getSeconds();
+        var weekend = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
+        console.log('今天是：' + year + '年' + (month + 1) + '月' + day + '日' + '\n' + weekend[week]
+            + hours + ':' + minutes + ':' + second);
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

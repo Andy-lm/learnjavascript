@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var arr = [1, 2, 4, 3];
+        var newarr = arr.concat([]) //用此方法拷贝一个新数组
+        console.log(newarr);
+        var obj = {
+            a: 'y'
+        }
+        console.log(obj.a);
+        var arr1 = [obj]; //属于数组的浅拷贝，//！拷贝的是对象的引用，对象改变后，拷贝后的数组也改变
+        var newarr1 = arr1.concat([]);
+        console.log(newarr1);
+        console.log(newarr1[0].a);
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

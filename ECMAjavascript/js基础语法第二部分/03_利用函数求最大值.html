@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function getsMax(arr) {
+            var j = arr[0];
+            for (var i = 1; i < arr.length - 2; i++) {
+                if (arr[i] > j) {
+                    j = arr[i];
+                }
+            }
+            return j;
+        }
+        console.log(getsMax([1, 32, 2, 6, 64, 3, 1, 18]));
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>李茂1</li>
+        <li>李茂2</li>
+        <li>李茂3</li>
+        <li>李茂4</li>
+        <li>李茂5</li>
+    </ul>
+    <ol id="ol">
+        <li class="cla">郑思雅1</li>
+        <li>郑思雅2</li>
+        <li>郑思雅3</li>
+        <li>郑思雅4</li>
+        <li>郑思雅5</li>
+    </ol>
+    <script>
+        //返回元素对象的集合，以伪数组的形式存储
+        //故可以进行索引与遍历，但没有对应的pop,push等数组操作
+        //元素对象为动态的，可以随之改变
+        //如果是一个对象   返回的也是伪数组形式
+        //没有对象返回的为空的伪数组
+        var uname = document.getElementsByTagName('li');
+        console.log(uname);
+        console.log(uname[2]);
+        for (var i = 0; i < uname.length; i++) {
+            console.log(uname[i]);
+        }
+        console.dir(uname);
+        // 用ID获取父元素
+        var ol = document.getElementById('ol') //获取元素对象
+        console.log(ol.getElementsByTagName('li')); //父元素必须唯一确定
+
+        /*  var ol = document.getElementsByTagName('ol');
+         console.log(ol[0].getElementsByTagName('li')); //因为返回的是元素对象集合 所以父元素必须唯一确定 */
+        var cla = document.getElementsByClassName('cla'); //返回元素对象集合
+        console.log(cla);
+        var dom = document.querySelector('li'); //根据选择器返回第一个元素对象
+        console.log(dom);
+
+    </script>
+</body>
+
+</html>

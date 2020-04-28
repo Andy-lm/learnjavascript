@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            margin: 50px auto;
+            background-color: blueviolet;
+            font-size: 16px;
+            font-weight: 700;
+            color: white;
+            text-align: center;
+            line-height: 100px;
+        }
+
+        div:active {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div>123</div>
+    <script>
+        // 1.获取事件源
+        var box = document.querySelector('div');
+        // 2.注册事件 box.onclick
+        console.log(box);
+        // 3.使用函数赋值添加事件处理程序
+        box.onclick = function () {
+            console.log('456');
+        }
+    </script>
+</body>
+
+</html>

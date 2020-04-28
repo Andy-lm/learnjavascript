@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <script>
+        //方法一
+        var div = document.querySelectorAll('div');
+        div[0].onclick = function () {
+            alert('11');
+            div[0].onclick = null;
+        }
+
+        //方法二
+        div[1].addEventListener('click', fu);
+        function fu() {
+            alert('22');
+            div[1].removeEventListener('click', fu);
+        }
+    </script>
+</body>
+
+</html>

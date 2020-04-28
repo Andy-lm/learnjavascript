@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*  var arr = ['lm', 'zsy', 'english', 'chinese'];
+         var newarr = [];
+         for (var i = 0; i < arr.length; i++) {
+             newarr[arr.length - i - 1] = arr[i];
+         }
+         console.log(newarr); */
+        //  两种方法均可以，一种为倒插，一种为正插
+        var arr = ['lm', 'zsy', 'english', 'chinese'];
+        var newarr = [];
+        for (var i = arr.length; i > 0; i--) {
+            newarr[newarr.length] = arr[i - 1];
+        }
+        console.log(newarr);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

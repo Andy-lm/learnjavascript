@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 是一种伪数组
+        function fun() {
+            console.log(arguments); //可以以数组方式存储任意个数数据
+            console.log(arguments.length); //具有长度属性
+            console.log(arguments[1]); //可以使用索引，但没有数组的pop与push等方法
+            for (var i = 0; i < arguments.length; i++) {
+                console.log(arguments[i]);
+            } //也可以对其进行遍历
+            return arguments; //还可以进行值的返回
+        }
+        var argu = fun(1, 2, 3);
+        console.log(argu);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

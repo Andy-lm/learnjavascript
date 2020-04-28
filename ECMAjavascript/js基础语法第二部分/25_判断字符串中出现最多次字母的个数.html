@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var str = 'abccbbbbbbccbcbc';
+        var obj = new Object(); //创建一个新对象
+        for (var i = 0; i < str.length; i++) {
+            var chars = str.charAt(i);
+            if (obj[chars]) {
+                obj[chars] += 1; //当属性名为某个变量的情况下
+            } else {
+                obj[chars] = 1;
+            }
+        }
+        obj[xy] = 25;
+        console.log(obj);
+        var max = 0;
+        for (var key in obj) {
+            if (obj[key] > max) {
+                max = obj[key]; //保存最的属性值
+                var str_max = key; //保存最大属性值的属性名
+            }
+        }
+        console.log('在字符串中出现最多的字母是：' + str_max + '出现了' + max + '次');
+
+        console.log(obj.b); //两种调用对象属性的方法,属性名确定
+        console.log(obj['b']);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

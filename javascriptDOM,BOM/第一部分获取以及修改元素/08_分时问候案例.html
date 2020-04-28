@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <img src="images/s.gif" alt="">
+    <div>上午好！</div>
+    <script>
+        function getTimer() {
+            var time = new Date();
+            var hours = time.getHours();  //当小于十时要前面添加0
+            hours = hours < 10 ? '0' + hours : hours;
+            var minutes = time.getMinutes();
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            var second = time.getSeconds();
+            second = second < 10 ? '0' + second : second;
+            // console.log(typeof second);
+            return hours + ':' + minutes + ':' + second;
+        }
+
+
+
+        var img = document.querySelector('img');
+        var div = document.querySelector('div');
+        //得到当前小时数
+        var date = new Date();
+        var h = date.getHours();
+        if (h < 12) {
+            img.src = 'images/s.gif';
+            div.innerHTML = '现在是：' + getTimer() + '大家中午好!';
+        } else if (h < 18) {
+            img.src = 'images/x.gif';
+            div.innerHTML = '现在是：' + getTimer() + '大家下午好!';
+        } else {
+            img.src = 'images/w.gif';
+            div.innerHTML = '现在是：' + getTimer() + '大家晚上好!';
+        }
+
+    </script>
+</body>
+
+</html>

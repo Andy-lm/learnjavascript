@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            position: absolute;
+            top: 50px;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            background-color: magenta;
+        }
+
+        .box2 {
+            position: absolute;
+            top: 300px;
+            left: 0;
+            width: 300px;
+            height: 300px;
+            background-color: maroon;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1" data-index="1"></div>
+    <div class="box2"></div>
+    <button>box2</button>
+    <script>
+        var box1 = document.querySelector('.box1');
+        var box2 = document.querySelector('.box2');
+        var btn = document.querySelector('button');
+        function animate(obj, target) {
+            // clearInterval(obj.timer);
+            obj.timer = setInterval(function () { //给对象添加方法的形式添加定时器
+                if (obj.offsetLeft >= target) {
+                    clearInterval(obj.timer);
+                }
+                obj.style.left = obj.offsetLeft + 1 + 'px';
+            }, 30); //设置成每隔30毫秒触发一次
+        }
+        animate(box1, 300);
+
+
+        console.log(box1.getAttribute('data-index'));
+        console.log(box1.className);
+        btn.addEventListener('click', function () {
+            animate(box2, 300);
+        })
+
+    </script>
+</body>
+
+</html>

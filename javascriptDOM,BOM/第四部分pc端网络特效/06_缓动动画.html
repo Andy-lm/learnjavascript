@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            top: 50px;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            background-color: magenta;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <button class="btn500">前进500</button>
+    <button class="btn800">前进800</button>
+    <script>
+        var div = document.querySelector('div');
+        var btn500 = document.querySelector('.btn500');
+        var btn800 = document.querySelector('.btn800');
+        function supAnimate(obj, target, callback) {
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function () { //给对象添加方法的形式添加定时器
+                if (obj.offsetLeft == target) {
+                    clearInterval(obj.timer);
+                    if (callback) {
+                        callback(); //在定时器停止时调用
+                    }
+                }
+                obj.speed = (target - obj.offsetLeft) / 50; //此公式达到速度递减的作用
+                //此公式保证了后退时的精度问题
+                obj.speed = obj.speed > 0 ? Math.ceil(obj.speed) : Math.floor(obj.speed);
+                obj.style.left = obj.offsetLeft + obj.speed + 'px'; //通过成比例的减小步长而达到控制精度的目的
+            }, 15); //设置成每隔15毫秒触发一次(推荐)
+        }
+        btn500.onclick = function () {
+            supAnimate(div, 500, function () {
+                div.style.backgroundColor = 'blue'; //以函数的形式传递参数
+            });
+        }
+        btn800.onclick = function () {
+            supAnimate(div, 800, function () {
+                div.style.backgroundColor = 'green';
+            });
+        }
+    </script>
+</body>
+
+</html>

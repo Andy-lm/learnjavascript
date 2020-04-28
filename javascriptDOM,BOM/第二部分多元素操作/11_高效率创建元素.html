@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [];
+        var data1 = +new Date();
+        for (var i = 0; i <= 5; i++) {
+            arr.push('<p><i>哈哈</i></p>'); //用数组形式创建元素更快
+        }
+        document.body.innerHTML = arr.join(''); //将数组转换为字符串形式
+        var data2 = +new Date();
+        console.log(data2 - data1);
+        document.write('<div>nihv</div>')
+    </script>
+</body>
+
+</html>

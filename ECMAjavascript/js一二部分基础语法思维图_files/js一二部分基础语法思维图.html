@@ -1,0 +1,674 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta content="text/css" http-equiv="Content-Style-Type">
+<title>ECMAscript基础语法</title>
+</head>
+<body>
+<h1 align="center" class="root">
+<a name="4b60orld2i060d4lqnnu0btsb6">ECMAscript基础语法</a>
+</h1>
+<div align="center" class="globalOverview">
+<img src="js%E4%B8%80%E4%BA%8C%E9%83%A8%E5%88%86%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E6%80%9D%E7%BB%B4%E5%9B%BE_files/images/ECMAscript%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95.jpg"></div>
+<h2 class="topic">
+<a name="2dunudnjhopklijc1ec80pcl6d">基本概念</a>
+</h2>
+<h3 class="topic">
+<a name="4qeih8fa1l9jgh8jmhdt45hgi0">&nbsp;一种运行在客户端的脚本语言</a>
+</h3>
+<h3 class="topic">
+<a name="75ebep9hn0m6aaslht8mv2cnqm">&nbsp;&nbsp;属于解释型语言</a>
+</h3>
+<h3 class="topic">
+<a name="0r84oqe83rk05dvrbsjlpkhrd2">&nbsp;&nbsp;通过浏览器内置的js解释器，解释一行执行一行</a>
+</h3>
+<h3 class="topic">
+<a name="101unsd436n0q0ct4ta5ammsrn">&nbsp;javascript</a>
+</h3>
+<h3 class="topic">
+<a name="7bhj9f5e51alb0gofsnds24948">&nbsp;&nbsp;ECMAscript基础语法</a>
+</h3>
+<h3 class="topic">
+<a name="7f3ai06ndmkqe6shvflucjher9">&nbsp;&nbsp;DOM页面文档对象模型</a>
+</h3>
+<h3 class="topic">
+<a name="6jlqptu2579h8attmju9j7elpc">&nbsp;&nbsp;浏览器对象模型</a>
+</h3>
+<h3 class="topic">
+<a name="3phalm7cjju1nd7cv3cd91qvc4">&nbsp;三种调用方式</a>
+</h3>
+<h3 class="topic">
+<a name="1rruk8betlbvalrm3evek5oq9q">&nbsp;&nbsp;行内式</a>
+</h3>
+<h3 class="topic">
+<a name="3ns5i3s8c78bhmbuvo53hjedle">&nbsp;&nbsp;嵌入式</a>
+</h3>
+<h3 class="topic">
+<a name="2d23evjr98tj1ga2ccagu4urun">&nbsp;&nbsp;链接式</a>
+</h3>
+<h3 class="topic">
+<a name="57mn8vds0stcsvdqoqpi1n7bcn">&nbsp;基本输入输出语句</a>
+</h3>
+<h3 class="topic">
+<a name="3ps9empbt62iq7jb9ih0p15m5q">&nbsp;&nbsp;alert()</a>
+</h3>
+<h3 class="topic">
+<a name="29dde6f6v72a77mbu3dmvcs212">&nbsp;&nbsp;prompt()</a>
+</h3>
+<h3 class="topic">
+<a name="7hl20rl18a7gdv7p5mscodrvjo">&nbsp;&nbsp;&nbsp;返回值默认为字符型</a>
+</h3>
+<h3 class="topic">
+<a name="53055bok1itidosb537jqf3l3e">&nbsp;&nbsp;console.log()</a>
+</h3>
+<h3 class="topic">
+<a name="1efpct3pov0edoscahvnotl1e2">&nbsp;预解析和代码执行</a>
+</h3>
+<h3 class="topic">
+<a name="3vtvk5gse3o6quutjpvbchbuf7">&nbsp;&nbsp;预解析分为两步，变量提升与函数提升</a>
+</h3>
+<h2 class="topic">
+<a name="39d2gqvgpcactsms0ai70ve4cc">变量</a>
+</h2>
+<h3 class="topic">
+<a name="581s7to5kf1vbftjvkdrpjjkci">&nbsp;两种变量类型</a>
+</h3>
+<h3 class="topic">
+<a name="3gjms9h21p1uc47du6ooganq3e">&nbsp;&nbsp;局部变量，两种定义方法</a>
+</h3>
+<h3 class="topic">
+<a name="4tfaltvnknop5hri9mkelgturm">&nbsp;&nbsp;&nbsp;函数的形参，函数内声明并且赋值的变量</a>
+</h3>
+<h3 class="topic">
+<a name="1d87ddvhr9cbhuf2i7ns6tk3jm">&nbsp;&nbsp;全局变量，两种定义方法</a>
+</h3>
+<h3 class="topic">
+<a name="30e8ta3eh4o65ac0l13n2kmp72">&nbsp;&nbsp;&nbsp;在函数外声明并且赋值的，在函数内赋值但不声明</a>
+</h3>
+<h3 class="topic">
+<a name="5o5is4g1ncoh13ge2ed6vo3g0g">&nbsp;变量名</a>
+</h3>
+<h3 class="topic">
+<a name="5nqv2h0imbg4drik70nrmfkaqr">&nbsp;&nbsp;以数字，字母，下划线，$组成</a>
+</h3>
+<h3 class="topic">
+<a name="7c8tabqad4u0o2iv0t8071s7rn">&nbsp;&nbsp;不能以数字开头</a>
+</h3>
+<h3 class="topic">
+<a name="1gjtd72fm3upfkn6fus39tjrrc">&nbsp;&nbsp;构造函数的首字母要大写</a>
+</h3>
+<h3 class="topic">
+<a name="1ddn2n0jig3khcvcs89cir5s43">&nbsp;&nbsp;不能为关键字</a>
+</h3>
+<h3 class="topic">
+<a name="0vqgcb3f0daemb7g1t470ctomc">&nbsp;&nbsp;遵循驼峰命名法</a>
+</h3>
+<h3 class="topic">
+<a name="6umm4gqg8roqpuaf5i0o2duofk">&nbsp;当变量赋值后，变量的类型才确定</a>
+</h3>
+<h3 class="topic">
+<a name="0r5k7armtfh9p2p4kbdo6ee2fq">&nbsp;销毁的时间</a>
+</h3>
+<p class="summary">(<a href="#581s7to5kf1vbftjvkdrpjjkci">两种变量类型</a>)</p>
+<h2 class="topic">
+<a name="3vm0faiadt5ft5ie2qvqiabagf">简单数据类型</a>
+</h2>
+<h3 class="topic">
+<a name="1shmhkkkvnsf0nrs2dm4tl7gut">&nbsp;Number()</a>
+</h3>
+<h3 class="topic">
+<a name="7ad2moi9hibrirohev765q3h20">&nbsp;&nbsp;0开头八进制，0x开头为十六进制</a>
+</h3>
+<h3 class="topic">
+<a name="263b0va4o4djv2e7gfgkrhpicp">&nbsp;String()</a>
+</h3>
+<h3 class="topic">
+<a name="6057rq1hsu2h9jqjfr6db79c5k">&nbsp;&nbsp;相关的转义字符</a>
+</h3>
+<h3 class="topic">
+<a name="3uq3hipp7r559p2l3sd10tt3bh">&nbsp;Boolean()</a>
+</h3>
+<h3 class="topic">
+<a name="56cd8mtt50muiqi2ic7qnfgfd6">&nbsp;Undefine</a>
+</h3>
+<h3 class="topic">
+<a name="6slsfod6he0l12ij5lr7up12tt">&nbsp;&nbsp;与字符串拼接，与数值拼接</a>
+</h3>
+<h3 class="topic">
+<a name="0916vo229fqra326pbob9dhqtn">&nbsp;Null</a>
+</h3>
+<h3 class="topic">
+<a name="2u2bj7vemn6e7g5k97rjhu0joh">&nbsp;&nbsp;与字符串拼接，与数值拼接</a>
+</h3>
+<h3 class="topic">
+<a name="4oga6t4mdikiruehcrj096q4j9">&nbsp;&nbsp;类型为Object</a>
+</h3>
+<h3 class="topic">
+<a name="45d0mgdvr0g5m544ppqeunbpl9">&nbsp;数据类型的转换</a>
+</h3>
+<h3 class="topic">
+<a name="66mfljn9nhajik8l36n9auk6rp">&nbsp;&nbsp;数值转换为字符，三种</a>
+</h3>
+<h3 class="topic">
+<a name="6l0ki0jmbk5b6v51sovkmojlar">&nbsp;&nbsp;字符转换为数值</a>
+</h3>
+<h3 class="topic">
+<a name="291umntaubi2fqaund8uae08uf">&nbsp;&nbsp;&nbsp;parseInt</a>
+</h3>
+<h3 class="topic">
+<a name="2pvmvgbqf0708u2m6uooisr9j2">&nbsp;&nbsp;&nbsp;parseFloat</a>
+</h3>
+<h3 class="topic">
+<a name="4unel1n4m1k6tcik3eipe0j61d">&nbsp;&nbsp;&nbsp;Number()</a>
+</h3>
+<h3 class="topic">
+<a name="0s1qv5h1q8h5lc2panetmq4dnp">&nbsp;&nbsp;&nbsp;隐式转换</a>
+</h3>
+<h3 class="topic">
+<a name="42otq9cvih1uf5amlu4p86dd4i">&nbsp;&nbsp;&nbsp;取整，去单位</a>
+</h3>
+<p class="summary">(<a href="#291umntaubi2fqaund8uae08uf">parseInt</a>, <a href="#2pvmvgbqf0708u2m6uooisr9j2">parseFloat</a>)</p>
+<h3 class="topic">
+<a name="3qdp2j80p1np3l07tv4uiqvt57">&nbsp;&nbsp;其他转换为布尔型</a>
+</h3>
+<h3 class="topic">
+<a name="5bpq3pqi53qseh2cfl4cnmbu65">&nbsp;&nbsp;&nbsp;&lsquo;' 0 NaN null undefined 为false其余为true</a>
+</h3>
+<h3 class="topic">
+<a name="0mj5jmp00csgkk6604j62bmju4">&nbsp;字符串的相关操作</a>
+</h3>
+<h3 class="topic">
+<a name="4f9jaaiumuk2mrnkg261li69j4">&nbsp;&nbsp;字符串的索引</a>
+</h3>
+<h3 class="topic">
+<a name="70f5kd2i4l49h42j4r03eg84m3">&nbsp;&nbsp;&nbsp;某字符出行的次数</a>
+</h3>
+<h3 class="topic">
+<a name="54e9idnp3el5qcqekqu99bmkh1">&nbsp;&nbsp;字符串字符的查找</a>
+</h3>
+<h3 class="topic">
+<a name="02p65q1ns91rie36i40c10sf2i">&nbsp;&nbsp;&nbsp;charAt()</a>
+</h3>
+<h3 class="topic">
+<a name="61uq2cmap532nntftqblvfu0cm">&nbsp;&nbsp;&nbsp;&nbsp;字符串遍历输出</a>
+</h3>
+<h3 class="topic">
+<a name="4ehib32mfmhckia0bjul3skmu7">&nbsp;&nbsp;&nbsp;&nbsp;判断字符串内某字符出现的次数</a>
+</h3>
+<h3 class="topic">
+<a name="7mlsob36c4g6t2nqhqp17j7sq4">&nbsp;&nbsp;&nbsp;charCodeAt()</a>
+</h3>
+<h3 class="topic">
+<a name="10uiuhm20ub6en75kb0vsd1ajm">&nbsp;&nbsp;&nbsp;&nbsp;后期用来监听键盘输入，返回的为ASCII码</a>
+</h3>
+<h3 class="topic">
+<a name="5uvuo5aqk6gv2cb5tes3ilpd7k">&nbsp;&nbsp;&nbsp;str[index]</a>
+</h3>
+<h3 class="topic">
+<a name="0h5gv0dk1fbceih83653noec84">&nbsp;&nbsp;字符串的截取</a>
+</h3>
+<h3 class="topic">
+<a name="32fo6p45qpilc2goui1cic6ve8">&nbsp;&nbsp;&nbsp;slice(start,end),substring(start,end)</a>
+</h3>
+<h3 class="topic">
+<a name="1f4k557gjk75g9c74d7h5rogd1">&nbsp;&nbsp;&nbsp;&nbsp;大多数时建议使用slice，substring在索引为负值时会为0</a>
+</h3>
+<h3 class="topic">
+<a name="7lk2d7h97ma67n6or6av8s802q">&nbsp;&nbsp;&nbsp;substr(start,length)</a>
+</h3>
+<h3 class="topic">
+<a name="37oc0jeqdk3ktsjsurugqii2sn">&nbsp;&nbsp;字符串的替换</a>
+</h3>
+<h3 class="topic">
+<a name="3flo0llbfok37lv3r5e3gdhb3n">&nbsp;&nbsp;&nbsp;replace('被替换的字符'，'替换为的字符')</a>
+</h3>
+<h3 class="topic">
+<a name="0jttd91knpg4p21css1uh1gd24">&nbsp;&nbsp;&nbsp;&nbsp;一次只能替换一个</a>
+</h3>
+<h3 class="topic">
+<a name="4uq6ncvo7f7s419oc7e3de1gcn">&nbsp;&nbsp;&nbsp;&nbsp;与while循环indexOf搭配实现所有某字符的替换</a>
+</h3>
+<h3 class="topic">
+<a name="2nllh5jvue6tutkrrcm3hducos">&nbsp;&nbsp;&nbsp;&nbsp;返回替换后新的字符串</a>
+</h3>
+<h3 class="topic">
+<a name="3grtes12tg10mqm1dm3ficfkiq">&nbsp;&nbsp;字符串转换为数组</a>
+</h3>
+<h3 class="topic">
+<a name="6ku2mo1dsd3gvs3v3gu81053bc">&nbsp;&nbsp;&nbsp;split('分隔符')</a>
+</h3>
+<h3 class="topic">
+<a name="39vq2gqrbrr0op121snf1uqj0v">&nbsp;&nbsp;大小写的转换</a>
+</h3>
+<h3 class="topic">
+<a name="09i8d4b37v4mbfrpohp488fvgs">&nbsp;&nbsp;&nbsp;toUpperCase()</a>
+</h3>
+<h3 class="topic">
+<a name="03kpg88jomcp9cvgm05b2eanq6">&nbsp;&nbsp;&nbsp;toLowerCase()</a>
+</h3>
+<h3 class="topic">
+<a name="2cdlk1fafnr6pafl0cdmih5l8b">&nbsp;三种包装对象</a>
+</h3>
+<p class="summary">(<a href="#1shmhkkkvnsf0nrs2dm4tl7gut">Number()</a>, <a href="#263b0va4o4djv2e7gfgkrhpicp">String()</a>, <a href="#3uq3hipp7r559p2l3sd10tt3bh">Boolean()</a>)</p>
+<h3 class="topic">
+<a name="16h7fhc7dg64q7i7qdmvecgq8q">&nbsp;&nbsp;new进行包装实例</a>
+</h3>
+<h3 class="topic">
+<a name="44cq4amr492ghql559i0m40v4i">&nbsp;&nbsp;原始类型自动转换（使用场合）</a>
+</h3>
+<h2 class="topic">
+<a name="7gaqab6foh0ee8q9t79gncma6j">运算符</a>
+</h2>
+<h3 class="topic">
+<a name="4hhce9dsaap3sk7hjt0j3so6oc">&nbsp;算术运算符</a>
+</h3>
+<h3 class="topic">
+<a name="1538nut15rkgtugmohv0nteurp">&nbsp;&nbsp;浮点数之间运算精度的问题</a>
+</h3>
+<h3 class="topic">
+<a name="69kugf4maojscvaj8uf6nsmb5a">&nbsp;&nbsp;%求余</a>
+</h3>
+<h3 class="topic">
+<a name="7ovrd335f0bd33hrsqf34hduuq">&nbsp;&nbsp;前置递增与后置递增</a>
+</h3>
+<h3 class="topic">
+<a name="0ck6jn2n3aotafglnsje6a4pbb">&nbsp;比较运算符</a>
+</h3>
+<h3 class="topic">
+<a name="05dh9hcfofsholo1mft0l1kp22">&nbsp;&nbsp;等于与全等于</a>
+</h3>
+<h3 class="topic">
+<a name="48b10d1sjb7rg0o03an33l45bs">&nbsp;逻辑运算符</a>
+</h3>
+<h3 class="topic">
+<a name="1bij3bogn71pi1gdm9l29urahr">&nbsp;&nbsp;与的优先级大于或的优先级&amp;&amp;&gt;||</a>
+</h3>
+<h3 class="topic">
+<a name="7ffeb3qhfkmdk1isg6h4d8f91k">&nbsp;&nbsp;相关的短路运算，逻辑中断。返回值后，后面的表达式将不再运行</a>
+</h3>
+<h3 class="topic">
+<a name="0d7fggpkm3a5kpa6tmhnd0ffnc">&nbsp;赋值运算符</a>
+</h3>
+<h3 class="topic">
+<a name="7l26j0ocop6u9af06vpkbek69i">&nbsp;&nbsp;+=等</a>
+</h3>
+<h3 class="topic">
+<a name="4jh7fcg69mdofdv14udbkogq9g">&nbsp;运算符的优先级</a>
+</h3>
+<h3 class="topic">
+<a name="6j2oievjohrh7mdmnm7eesoolh">&nbsp;&nbsp;()&lt;--++!&lt;+-*/&lt;关系运算符&lt;相等运算符&lt;逻辑运算符&lt;赋值&lt;，</a>
+</h3>
+<h2 class="topic">
+<a name="37u86ivcifnsjmca9v7cushstp">分支判断</a>
+</h2>
+<h3 class="topic">
+<a name="6750n2bod8gc6ahi8cj5k1p6g3">&nbsp;IF判断结构</a>
+</h3>
+<h3 class="topic">
+<a name="3p4q0nmc5tukbnrsneptjj6j81">&nbsp;三元表达式</a>
+</h3>
+<h3 class="topic">
+<a name="4i8i9iqobv5rcu516ii21alhtu">&nbsp;switch语句结构</a>
+</h3>
+<h2 class="topic">
+<a name="3r37a815dg9hbttkuluu77pr8o">三种循环语句</a>
+</h2>
+<h3 class="topic">
+<a name="7oi73mlvougos2u3v6ib5c3kc3">&nbsp;for循环</a>
+</h3>
+<h3 class="topic">
+<a name="6mln87nlii03h538c2f7gfqq7t">&nbsp;&nbsp;冒泡排序</a>
+</h3>
+<h3 class="topic">
+<a name="7651e8t2rlgcsk82j66lj09n6e">&nbsp;&nbsp;&nbsp;前一值与后一值相比较</a>
+</h3>
+<h3 class="topic">
+<a name="2o3q1hkdg17ksdo4oa4g166gdp">&nbsp;&nbsp;&nbsp;通过第三个变量交换位置</a>
+</h3>
+<h3 class="topic">
+<a name="5coc5uteftks4ouajjkbmba8cm">&nbsp;&nbsp;&nbsp;循环j-i-1次</a>
+</h3>
+<h3 class="topic">
+<a name="362p0rnmsrg4piad7mpjm1he6n">&nbsp;while循环</a>
+</h3>
+<h3 class="topic">
+<a name="2483au17msgmlcpa1pqdr0r6uf">&nbsp;do{}while()循环</a>
+</h3>
+<h3 class="topic">
+<a name="7ksdpbartr31051peaud6gv0ni">&nbsp;两个关键字，continue,break的用法，在循环中嵌套判断来使用</a>
+</h3>
+<h2 class="topic">
+<a name="61ebeahlcadn79rju8b25sv1ii">函数的创建</a>
+</h2>
+<h3 class="topic">
+<a name="13v7355c3gn3akdbbraq9hc4tq">&nbsp;函数名的两种声明方式</a>
+</h3>
+<h3 class="topic">
+<a name="227nqfcrfscv6afjtss1j6fndm">&nbsp;&nbsp;关键字function声明</a>
+</h3>
+<h3 class="topic">
+<a name="5oo7opctbckn74onna44q09f1j">&nbsp;&nbsp;函数表达式声明</a>
+</h3>
+<h3 class="topic">
+<a name="4rm1v9fpimhutp9or27or2hisj">&nbsp;&nbsp;&nbsp;变量里存放函数</a>
+</h3>
+<h3 class="topic">
+<a name="5pu8rcv159l6ap2voqi6t8ln1b">&nbsp;参数</a>
+</h3>
+<h3 class="topic">
+<a name="15ut0pjs9k77i35pclp9vnvss7">&nbsp;&nbsp;当参数多于或少于函数的形参时</a>
+</h3>
+<h3 class="topic">
+<a name="7itqjpa71nu0tq91dlc514hsli">&nbsp;&nbsp;argument</a>
+</h3>
+<h3 class="topic">
+<a name="1ug7c73tsomg8v93btcuc6nkgr">&nbsp;&nbsp;&nbsp;具有length长度</a>
+</h3>
+<h3 class="topic">
+<a name="3i7cd06r6jju8vh6ldkbv282pf">&nbsp;&nbsp;&nbsp;不需要给函数设置形参，直接传递数值就行</a>
+</h3>
+<h3 class="topic">
+<a name="678554l4dfsegmuhu5isn44pgp">&nbsp;&nbsp;&nbsp;可以进行遍历</a>
+</h3>
+<h3 class="topic">
+<a name="0b0j48g6am7om6fu20tipg3dec">&nbsp;&nbsp;&nbsp;属于伪数组，以数组的形式保存传递来的数值</a>
+</h3>
+<h3 class="topic">
+<a name="54vbg4i3b2beidt2tc5avsdmrr">&nbsp;嵌套定义与作用域链</a>
+</h3>
+<h3 class="topic">
+<a name="6llv65df7a4reqpjevuoubdh53">&nbsp;&nbsp;内部函数访问外部函数变量时采用链式，一层一层查找</a>
+</h3>
+<h3 class="topic">
+<a name="1vj64qbs5ou8ipvlki10g92dnn">&nbsp;预加载时的区别</a>
+</h3>
+<p class="summary">(<a href="#13v7355c3gn3akdbbraq9hc4tq">函数名的两种声明方式</a>)</p>
+<h2 class="topic">
+<a name="06kdaf4roetisb8971nnsc6bqt">对象</a>
+</h2>
+<p class="relationships">参见: <a href="#7f0473kag6k76gbmefh3umrqv9">自定义对象</a>
+</p>
+<h3 class="topic">
+<a name="5cc1n4u2lb8quhrl6v0u800qa3">&nbsp;对象创建的两种方法</a>
+</h3>
+<h3 class="topic">
+<a name="79m7jrjt0g49ik61bjfh117heh">&nbsp;&nbsp;var obj = new Object{}</a>
+</h3>
+<h3 class="topic">
+<a name="5reit0qaq02ofrcgrslnpmn5tt">&nbsp;&nbsp;&nbsp;obj.属性名 = 属性值；</a>
+</h3>
+<h3 class="topic">
+<a name="6s03p9f7sls9n1een1dn7hkcmn">&nbsp;&nbsp;var obj = {}</a>
+</h3>
+<h3 class="topic">
+<a name="004dcvaauvu2jvqq1ovhc8fs5j">&nbsp;&nbsp;&nbsp;属性名：属性值，</a>
+</h3>
+<h3 class="topic">
+<a name="2r13r3fghqc771pq2fbf0g8jlm">&nbsp;两种属性的调用，一种方法的调用</a>
+</h3>
+<h3 class="topic">
+<a name="35rpd3fq1kj1sq95fs49utfo42">&nbsp;属性的添加</a>
+</h3>
+<h3 class="topic">
+<a name="715bt64p6qtf2eclt2s49811td">&nbsp;&nbsp;两种属性的添加，一种方法的添加</a>
+</h3>
+<h3 class="topic">
+<a name="0q40d06cthkctjqlecl8p5v7rg">&nbsp;&nbsp;&nbsp;对象名[变量] = 参数名；</a>
+</h3>
+<h3 class="topic">
+<a name="0cb3qrjgvqupfk9h485b6najt3">&nbsp;使用for（ var key in obj）对对象进行遍历</a>
+</h3>
+<h3 class="topic">
+<a name="44cnngaufq7ui0r07mqnsvq2s5">&nbsp;&nbsp;key：属性名</a>
+</h3>
+<h3 class="topic">
+<a name="1vla6k74e01tdr3a36ff5v0v10">&nbsp;&nbsp;对象名[key]：属性值</a>
+</h3>
+<h2 class="topic">
+<a name="3audtnkm648ko6341df29c73j1">构造函数（类）</a>
+</h2>
+<h3 class="topic">
+<a name="4ndutvs05079sp53sak971msig">&nbsp;函数名首字母大写</a>
+</h3>
+<h3 class="topic">
+<a name="05en4th3sj2chdvvmdlr50kuin">&nbsp;this.属性名 = 属性值；（可以用参数进行传递）</a>
+</h3>
+<h3 class="topic">
+<a name="14t1qs66u3qpdisquatno9qlqn">&nbsp;使用new进行对象的创建</a>
+</h3>
+<h3 class="topic">
+<a name="2n0rdp2d54p25h4q72kpc4ccgm">&nbsp;&nbsp;记得传递参数</a>
+</h3>
+<h3 class="topic">
+<a name="7rj30dt82e5qc7191mr4gvq096">&nbsp;&nbsp;方法的参数只能在调用对象方法时传递</a>
+</h3>
+<h2 class="topic">
+<a name="57qj824jd42uk689ceu422t2fv">复杂数据类型（对象）</a>
+</h2>
+<h3 class="topic">
+<a name="5ld2ish0s4hsn6biuc4ujbv69u">&nbsp;数组</a>
+</h3>
+<h3 class="topic">
+<a name="7sse9c3md83qesdu7oh0aciaik">&nbsp;&nbsp;两种数组的创建方法</a>
+</h3>
+<h3 class="topic">
+<a name="7la1lb0h870188clkm56d8qfal">&nbsp;&nbsp;数组名.length = 值；</a>
+</h3>
+<h3 class="topic">
+<a name="2dao48dgkv7egdcv9p61oo6g5c">&nbsp;&nbsp;两种判断是否为数组的方法</a>
+</h3>
+<h3 class="topic">
+<a name="4ldlnsc8dcm80ib1v4pl5ofpgs">&nbsp;&nbsp;&nbsp;instancesof</a>
+</h3>
+<h3 class="topic">
+<a name="1sdee0lom6l73oqtpckdip47d2">&nbsp;&nbsp;&nbsp;Array.isArray()</a>
+</h3>
+<h3 class="topic">
+<a name="6qups34f8imn2tiu9dtta13cov">&nbsp;&nbsp;四种增删数组元素的方法</a>
+</h3>
+<h3 class="topic">
+<a name="522nef4ca6nq4huke1t2chcdac">&nbsp;&nbsp;&nbsp;push(元素)在末尾添加一个元素，返回数组元素个数</a>
+</h3>
+<h3 class="topic">
+<a name="1sbhqkgtvgjo1g4ne7gipi0c6o">&nbsp;&nbsp;&nbsp;unshift(元素)在开头添加一个元素，返回数组元素个数</a>
+</h3>
+<h3 class="topic">
+<a name="2b8bpv95rrhdrq5vdc9fkpr5k3">&nbsp;&nbsp;&nbsp;pop()删除数组末尾一个元素，返回删除元素</a>
+</h3>
+<h3 class="topic">
+<a name="32sucm47m5fsrtcl004gm73od2">&nbsp;&nbsp;&nbsp;shift()删除数组开头一个元素，返回删除元素</a>
+</h3>
+<h3 class="topic">
+<a name="152g2ibeeprmfk9a3mvb00i0jh">&nbsp;&nbsp;reverse()数组翻转</a>
+</h3>
+<h3 class="topic">
+<a name="2i9ue4vpjvdg4g8a6re474vd6l">&nbsp;&nbsp;数组名.sort(function (a,b){return a-b})改为升序排列</a>
+</h3>
+<h3 class="topic">
+<a name="1nb9su04njmu3aje5e7vn92kul">&nbsp;&nbsp;数组索引</a>
+</h3>
+<h3 class="topic">
+<a name="475pr0016c86mjtabnd3vvkk7m">&nbsp;&nbsp;&nbsp;indexOf(要查找的元素，起始位置的索引号)</a>
+</h3>
+<h3 class="topic">
+<a name="5gq4sra61jcuoe5rhnpl6bdegp">&nbsp;&nbsp;&nbsp;&nbsp;每次只能查找遇见的第一个元素</a>
+</h3>
+<h3 class="topic">
+<a name="5itcqu4i74mabptgom0sab28vb">&nbsp;&nbsp;&nbsp;&nbsp;数组去重</a>
+</h3>
+<h3 class="topic">
+<a name="759tjljkpoll37fl9ckugqkfpc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;定义一个新数组，遍历旧数组中的元素，用indexOf判断其在旧数组中是否存在，将其放入新数组中</a>
+</h3>
+<h3 class="topic">
+<a name="3k2kngq4k6lpgj790e46n0b3dj">&nbsp;&nbsp;&nbsp;&nbsp;查找数组内某元素的个数</a>
+</h3>
+<h3 class="topic">
+<a name="6fbq7ffu90npm3arela7thm7og">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;使用while循环不断判断index返回值是否不等于-1，满足时让计数器加一，并且查找位置加一，赋值给index</a>
+</h3>
+<h3 class="topic">
+<a name="1tnqlj765qkue8j0ipsgpt8nsg">&nbsp;&nbsp;&nbsp;lastIndexOf()</a>
+</h3>
+<h3 class="topic">
+<a name="4cveeaasc692pau6pm82cumed7">&nbsp;&nbsp;数组转换为字符串</a>
+</h3>
+<h3 class="topic">
+<a name="7c1u659bud64gbfvh228e0d9kv">&nbsp;&nbsp;&nbsp;toString()</a>
+</h3>
+<h3 class="topic">
+<a name="3td554ktkci798lsstnvmpbqh0">&nbsp;&nbsp;&nbsp;join('分隔符')</a>
+</h3>
+<h3 class="topic">
+<a name="0pec40ddvevmljh5b77c4ikfgg">&nbsp;&nbsp;数组的拼接</a>
+</h3>
+<h3 class="topic">
+<a name="60q1mdfdnl96t8rh0qkpq7tl16">&nbsp;&nbsp;&nbsp;concat(['a'],['b'])</a>
+</h3>
+<h3 class="topic">
+<a name="2v3ntk87bdpkp19elg4pk34u1h">&nbsp;&nbsp;数组的截取</a>
+</h3>
+<h3 class="topic">
+<a name="0dh4n9vr35jfeg360qehkrsc6m">&nbsp;&nbsp;&nbsp;slice(start,end)索引号，不包括end</a>
+</h3>
+<h3 class="topic">
+<a name="17of233r3ejgr2u382rt078buk">&nbsp;&nbsp;数组的删除</a>
+</h3>
+<h3 class="topic">
+<a name="430sf5tpk3671piodsfv06a25v">&nbsp;&nbsp;&nbsp;splice(start,length)</a>
+</h3>
+<h3 class="topic">
+<a name="01gcbm2m3unu2ad1ba9kmcqcdr">&nbsp;函数</a>
+</h3>
+<h3 class="topic">
+<a name="7gpeiouqdmevurvlsv20aebcce">&nbsp;狭义的对象（object）</a>
+</h3>
+<h3 class="topic">
+<a name="5kjpns5hnjcb38p5925h1u2dv6">&nbsp;&nbsp;内置对象</a>
+</h3>
+<h3 class="topic">
+<a name="6d05qumbg87b9lbucnsdcqohh0">&nbsp;&nbsp;&nbsp;Date对象</a>
+</h3>
+<h3 class="topic">
+<a name="75aiteejnu58p9fm2imlniud0l">&nbsp;&nbsp;&nbsp;&nbsp;一种动态对象，需要new进行创建</a>
+</h3>
+<h3 class="topic">
+<a name="3e4o5skg2205fg9mv3gv7hn8dv">&nbsp;&nbsp;&nbsp;&nbsp;三种传递参数的方式</a>
+</h3>
+<h3 class="topic">
+<a name="21393co2il56annf42meqbovun">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2020,4,8</a>
+</h3>
+<h3 class="topic">
+<a name="0ooulvoutkeldna5k226erov56">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'2020-4-8 8:8:8'</a>
+</h3>
+<h3 class="topic">
+<a name="3njuibs4ouudq2mf61n9l2fk4j">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;一串毫秒数也行</a>
+</h3>
+<h3 class="topic">
+<a name="4l6g4ftbji0jbv0tgh653opbec">&nbsp;&nbsp;&nbsp;&nbsp;直接调用对象名返回当前时间以字符串的方式</a>
+</h3>
+<h3 class="topic">
+<a name="3qgcn921poiovdi8id0ji7h7o7">&nbsp;&nbsp;&nbsp;&nbsp;时间及日期对应的方法</a>
+</h3>
+<h3 class="topic">
+<a name="59o0p93du62koet3t410j27e6l">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;年，月，日，周，时，分，秒</a>
+</h3>
+<h3 class="topic">
+<a name="4c2hbgrr9fot05k9t8sqmnmhc9">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;日期及时间格式的初始化</a>
+</h3>
+<h3 class="topic">
+<a name="4k3oief2oa968vu2com1vqdhef">&nbsp;&nbsp;&nbsp;&nbsp;时间戳</a>
+</h3>
+<h3 class="topic">
+<a name="1mhbre470q88aaj9bgrilhn09j">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;三种时间戳的获取办法</a>
+</h3>
+<h3 class="topic">
+<a name="61pb2b5u0a72bof45f9ju68c0c">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valueOf(),getTime()</a>
+</h3>
+<h3 class="topic">
+<a name="3e5gs4pqjknks8e87jerb4udra">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var date = +new Date();</a>
+</h3>
+<h3 class="topic">
+<a name="0sav89fdbk6h30cgfppf1lecte">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date.now()</a>
+</h3>
+<h3 class="topic">
+<a name="6hop9tue3hprpp49aol7mfbqnu">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;返回为距1970年1月1日 00:00:00的毫秒数</a>
+</h3>
+<h3 class="topic">
+<a name="19jcvusvtus5fihob6lrqnmffc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;倒计时案例</a>
+</h3>
+<h3 class="topic">
+<a name="6tag5qcj19trskoekq5rmd70k2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;未来时间的时间戳-当前时间的时间戳/1000</a>
+</h3>
+<h3 class="topic">
+<a name="3kknq6lbcu92d4heha8bhrn0at">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;将对应的秒数转换为相应的时间及日期</a>
+</h3>
+<h3 class="topic">
+<a name="39ledqjrqbpau63r97r4tgo4cu">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;使用三元表达式进行补0</a>
+</h3>
+<h3 class="topic">
+<a name="0l2n115c0gavr46dlrqfbqva2e">&nbsp;&nbsp;&nbsp;&nbsp;子主题 6</a>
+</h3>
+<h3 class="topic">
+<a name="6i4evpquo7p6i2uu4f4t68h57t">&nbsp;&nbsp;&nbsp;Math对象</a>
+</h3>
+<h3 class="topic">
+<a name="3gc06p2no2pjhq3u1b1cqaknio">&nbsp;&nbsp;&nbsp;&nbsp;一种静态对象，直接调用</a>
+</h3>
+<h3 class="topic">
+<a name="5j27fkqk1oq1aoijunvthjuelc">&nbsp;&nbsp;&nbsp;&nbsp;Math.PI</a>
+</h3>
+<h3 class="topic">
+<a name="44m5pd5g7kk6pk09tmras2ui6n">&nbsp;&nbsp;&nbsp;&nbsp;上下取整，floor,ceil</a>
+</h3>
+<h3 class="topic">
+<a name="3i1vbl74kbjrefpd2gl8q32ckm">&nbsp;&nbsp;&nbsp;&nbsp;四舍五入,round</a>
+</h3>
+<h3 class="topic">
+<a name="5kjqpspi18ontndo265f6g1bej">&nbsp;&nbsp;&nbsp;&nbsp;绝对值,abs</a>
+</h3>
+<h3 class="topic">
+<a name="3e40sh5037r2cspg9cdu1d994j">&nbsp;&nbsp;&nbsp;&nbsp;最大最小值，max,min</a>
+</h3>
+<h3 class="topic">
+<a name="1j5ru6c874hmjaf68mcenlltnm">&nbsp;&nbsp;&nbsp;&nbsp;[0,1)随机小数random</a>
+</h3>
+<h3 class="topic">
+<a name="6bd27nvk1tt04a19p92ahdlpof">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;任意范围随机数函数</a>
+</h3>
+<h3 class="topic">
+<a name="0ep2q7m0itl0n9vmi6uugvjfrk">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Math.random()*(max-min)+min</a>
+</h3>
+<h3 class="topic">
+<a name="1l9v5iqa1rlf3tv0np4lmkleqm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;任意范围随机整数函数</a>
+</h3>
+<h3 class="topic">
+<a name="4ugae5llmen4m8qlh0e44q7q96">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Math.floor(Math.random()*(max-min+1))+min</a>
+</h3>
+<h3 class="topic">
+<a name="7f0473kag6k76gbmefh3umrqv9">&nbsp;&nbsp;自定义对象</a>
+</h3>
+<p class="relationships">参见: <a href="#06kdaf4roetisb8971nnsc6bqt">对象</a>
+</p>
+<h2 class="topic">
+<a name="67c25jo7olnh64o2nhue22vuai">相关算法</a>
+</h2>
+<h3 class="topic">
+<a name="2q6v0rlbv037hqiohka44akqvq">&nbsp;冒泡排序</a>
+</h3>
+<h3 class="topic">
+<a name="5o0iv2ppeh0namjtbm5i849vj2">&nbsp;数组去重</a>
+</h3>
+<h3 class="topic">
+<a name="1nj3bie9qlbrcgjijcnh2lcsol">&nbsp;字符串内某字符出现的次数</a>
+</h3>
+<h3 class="topic">
+<a name="527k2ggtfi22hpep3joldrrn0s">&nbsp;字符串某字母的替换</a>
+</h3>
+<h3 class="topic">
+<a name="0oh5lsfjfthvvkkj04g3pa51qp">&nbsp;随机数与随机整数</a>
+</h3>
+<h3 class="topic">
+<a name="3j37m6jk487uk62ti48br4b18l">&nbsp;秒数格式化为日期</a>
+</h3>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="start">开始倒计时</button>
+    <button class="end">结束倒计时</button>
+    <script>
+        var start = document.querySelector('.start');
+        var end = document.querySelector('.end');
+        // var starts = null;必须设置一个全局变量
+        start.addEventListener('click', function () { //开始定时器
+            starts = setInterval(function () { //这里的starts必须为全局变量
+                console.log('你好呀');
+            }, 1000)
+        })
+        end.addEventListener('click', function () {
+            clearInterval(starts);
+            console.log('循环结束了');
+        })
+    </script>
+</body>
+
+</html>

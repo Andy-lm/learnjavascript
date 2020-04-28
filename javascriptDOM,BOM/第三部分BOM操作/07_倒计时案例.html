@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            margin: 200px;
+        }
+
+        span {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: #333;
+            font-size: 20px;
+            color: #fff;
+            text-align: center;
+            line-height: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span class="hour">1</span>
+        <span class="minute">2</span>
+        <span class="second">3</span>
+    </div>
+    <script>
+        var hour = document.querySelector('.hour');
+        var minute = document.querySelector('.minute');
+        var second = document.querySelector('.second');
+        function countDown() {
+            var nowTime = +new Date();
+            var inputTime = +new Date(timer);
+            var Times = (inputTime - nowTime) / 1000;
+            // var d = parseInt(Times / 60 / 60 / 24); //剩余天数
+            // d = d < 10 ? '0' + d : d;
+            var h = parseInt(Times / 60 / 60 % 24); //剩余小时
+            h = h < 10 ? '0' + h : h;
+            hour.innerHTML = h;
+            var m = parseInt(Times / 60 % 60); //剩余分钟
+            m = m < 10 ? '0' + m : m;
+            minute.innerHTML = m;
+            var s = parseInt(Times % 60); //剩余秒
+            s = s < 10 ? '0' + s : s;
+            second.innerHTML = s;
+        }
+
+        var timer = '2020-4-16 13:50:00'; //此题只能用全局变量
+        countDown(); //因为是隔一秒钟才触发，所以必须提前执行一下
+        setInterval(countDown, 1000); //间隔
+
+    </script>
+</body>
+
+</html>

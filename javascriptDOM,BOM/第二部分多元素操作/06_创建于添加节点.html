@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <li>123</li>
+    </div>
+    <script>
+        //创建节点
+        var li = document.createElement('li');
+        var p = document.createElement('p');
+        //获取元素
+        var div = document.querySelector('div');
+        li.innerHTML = 'lm';
+        p.innerHTML = 'hah';
+        //添加节点
+        div.appendChild(li); //添加在所有子节点的后面
+        div.insertBefore(p, div.children[0]); //添加在指定节点的前面
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="images/ad.jpg" alt="">
+    <script>
+        document.addEventListener('DOMContentLoaded', function () { //使其在文档标签加载完就开始执行
+            setTimeout(function () {
+                img.style.display = 'none';
+            }, 5000); //设置回调延迟函数5秒
+        })
+        var img = document.querySelector('img');
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="images/angel.gif" alt="">
+    <script>
+        var pic = document.querySelector('img');
+        document.addEventListener('mousemove', function (e) { //mousemove鼠标移动触发
+            var x = e.pageX; //document在页面文档中设置
+            var y = e.pageY;
+            pic.style.top = y + 'px';
+            pic.style.left = x + 'px';
+        })
+    </script>
+</body>
+
+</html>

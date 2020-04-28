@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 创建一个对象并且调用
+        var keke = {
+            uname: '可可',
+            type: '阿拉斯加',
+            age: 5,
+            color: 'red', //只要是字符类型就要记得加引号
+            bark: function () {
+                console.log('汪汪汪');
+
+            }, //方法之间的逗号不要忘记
+            play: function () {
+                console.log('我会演电影哦');
+            }
+        }
+        console.log('我的名字是' + keke.uname);
+        keke.bark(); //相当于函数所以要加括号
+        keke.play();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

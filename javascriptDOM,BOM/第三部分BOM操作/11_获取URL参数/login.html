@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>前进</button>
+    <button class="reload">刷新</button>
+    <form action="index.html">
+        用户名：<input type="text" name="uname" id="">
+        <input type="submit" value="登录">
+    </form>
+    <script>
+        var btn = document.querySelector('button');
+        var rel = document.querySelector('.reload');
+        rel.onclick = function () {
+            window.location.reload(true); //用于刷新页面
+        }
+        btn.onclick = function () {
+            window.history.forward(); //用来记录访问过的url地址
+        }
+    </script>
+</body>
+
+</html>

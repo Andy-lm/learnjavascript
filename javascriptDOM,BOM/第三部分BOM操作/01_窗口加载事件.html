@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        window.addEventListener('load', function () {
+            alert(11);
+        })
+        document.addEventListener('DOMContentLoaded', function () {
+            alert(22); //DOM加载完毕就执行了，load是所有加载完毕才执行，故DOMContentLoaded更快些
+        })
+    </script>
+</body>
+
+</html>

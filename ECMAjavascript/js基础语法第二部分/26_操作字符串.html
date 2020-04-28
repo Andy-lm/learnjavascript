@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var str = '忽如一夜春风来，';
+        console.log(str.concat('千树万树梨花开')); //连接字符串
+        console.log(str.substr(4, 2)); //截取字符串
+        console.log(str.slice(4, 6)); //截取字符串，不包括后面的索引
+        //替换字符串
+        var str1 = 'wqfwaagalasfl';
+        console.log(str1.replace('l', '#')); //只能替换第一个
+        console.log(str1);
+
+        while (str1.indexOf('w') !== -1) { //我们通过不断的遍历数组让其替换所有的字母
+            str1 = str1.replace('w', '-');
+        }
+        console.log(str1);
+        var str2 = 'li, mao';
+        console.log(str2.split(',')); //将字符串转换为数组，但字符串要有对应的分隔符
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 封装函数的定义及调用
+        // 记住封装的函数首字母要大写
+        function Stars(uname, age, sex) {
+            this.name = uname;
+            this.age = age;
+            this.sex = sex;
+            this.sing = function (song) {
+                console.log(song);
+            }
+        }
+        var ldh = new Stars('刘德华', 18, '男');
+        console.log(ldh.name);
+        console.log(ldh['age']);
+        ldh.sing('雨冰');
+        // 使用for循环进行遍历，注意变量不需要加引号
+        for (var k in ldh) {
+            console.log(ldh[k]);
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

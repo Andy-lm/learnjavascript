@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 倒计时函数
+        function countDown(time) {
+            var nowTime = +new Date();
+            var inputTime = +new Date(time);
+            var Times = (inputTime - nowTime) / 1000;
+            var d = parseInt(Times / 60 / 60 / 24); //剩余天数
+            d = d < 10 ? '0' + d : d;
+            var h = parseInt(Times / 60 / 60 % 24); //剩余小时
+            h = h < 10 ? '0' + h : h;
+            var m = parseInt(Times / 60 % 60); //剩余分钟
+            m = m < 10 ? '0' + m : m;
+            var s = parseInt(Times % 60); //剩余秒
+            s = s < 10 ? '0' + s : s;
+            return d + '天' + h + '小时' + m + '分' + s + '秒';
+        }
+        // 当前时间函数
+        function getTimer() {
+            var time = new Date();
+            var hours = time.getHours();  //当小于十时要前面添加0
+            hours = hours < 10 ? '0' + hours : hours;
+            var minutes = time.getMinutes();
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            var second = time.getSeconds();
+            second = second < 10 ? '0' + second : second;
+            console.log(typeof second);
+
+            return hours + ':' + minutes + ':' + second;
+        }
+        console.log(getTimer());
+        
+        console.log(countDown('2020-4-5 19:00:00'));
+        var day = new Date();
+        console.log(day);
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

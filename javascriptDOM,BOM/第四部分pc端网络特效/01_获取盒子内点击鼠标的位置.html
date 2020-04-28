@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+            margin: 100px auto;
+            background-color: slateblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        var box = document.querySelector('div');
+        box.addEventListener('mousemove', function (e) { //添加一个事件对象
+            // console.log(e.pageX); //获取在盒子内点击鼠标的坐标
+            // console.log(e.pageY);
+            // console.log(X);
+            var x = e.pageX - this.offsetLeft;
+            var y = e.pageY - this.offsetTop;
+
+            // console.log(x);
+            // console.log(x);
+            // console.log(y);
+            box.innerHTML = 'x的位置是：' + x + 'y的位置是:' + y;
+
+        })
+    </script>
+</body>
+
+</html>

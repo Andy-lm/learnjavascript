@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>炸弹停止</button>
+    <script>
+        var btn = document.querySelector('button');
+        var timer = setTimeout(function () { //给定时器添加名称
+            console.log('爆炸了');
+        }, 5000);
+        btn.onclick = function () {
+            clearTimeout(timer);
+            console.log('炸弹解除啦');
+        }
+    </script>
+</body>
+
+</html>

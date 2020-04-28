@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // instanceof运算符用来对是否为数组格式进行判断
+        function reverse(arr) {
+            if (arr instanceof Array) {
+                var newarr = [];
+                for (var i = arr.length - 1; i >= 0; i--) {
+                    newarr[newarr.length] = arr[i];
+                }
+                return newarr;
+            } else {
+                return '请您输入数组的格式';
+            }
+        }
+        console.log(reverse([1, 'zsy', 3, 6, 9]));
+        console.log(reverse(1, 2, 3));
+        var newarr = new Array();
+        var obj = {};
+        console.log(newarr instanceof Array); //数组的第一种检测方法
+        console.log(obj instanceof Array);
+        // console.log(Array.isArray(arr));
+        console.log(Array.isArray(newarr)); //数组的第二种检测方法(h5新增ie9以上才可以使用)
+        console.log(Array.isArray(obj));
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

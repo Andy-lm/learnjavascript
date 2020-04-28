@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background: url(images/1.jpg) no-repeat top;
+        }
+
+        nav {
+            width: 169px;
+            height: 30px;
+            /* background-color: aqua; */
+            margin: 20px auto;
+        }
+
+        nav div {
+            float: left;
+            width: 40px;
+            height: 100%;
+            /* background-color: blueviolet; */
+            margin-right: 3px;
+        }
+
+        nav div:last-child {
+            margin-right: 0;
+        }
+
+        nav div img {
+            width: 40px;
+            height: 30px;
+            border: 1px solid white;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div><img src="images/1.jpg" alt=""></div>
+        <div><img src="images/2.jpg" alt=""></div>
+        <div><img src="images/3.jpg" alt=""></div>
+        <div><img src="images/4.jpg" alt=""></div>
+    </nav>
+    <script>
+        var imgs = document.querySelectorAll('img');
+        var bodys = document.body;
+        for (var i = 0; i < imgs.length; i++) {
+            imgs[i].onclick = function () {
+                bodys.style.background = 'url(' + this.src + ') no-repeat top';
+            }
+        }
+
+    </script>
+</body>
+
+</html>

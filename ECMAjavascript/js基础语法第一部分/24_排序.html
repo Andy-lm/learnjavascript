@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 冒泡法排序
+        var arr = [1, 5, 4, 2, 9, 42, 3, 21, 2, 10, 4, 3, 4, 3, 21];
+        var num;
+        // 需要交换的趟数为总数减一，因为最后一个数在交换完默认在第一的位置
+        for (var j = 0; j < arr.length - 1; j++) {
+            // 每次需要交换的为总数减一，交换完最后一个数已经在末尾了，不再需要交换，需要交换的数逐渐减少
+            for (var i = 0; i < arr.length - 1 - j; i++) {
+                if (arr[i] > arr[i + 1]) {
+                    num = arr[i];
+                    arr[i] = arr[i + 1];
+                    arr[i + 1] = num;
+                }
+            }
+        }
+        console.log(arr);
+    </script>
+</head>
+<body>
+
+</body>
+
+</html>

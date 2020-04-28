@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var num = prompt('请输入学生人数')
+        var sum = 0, average = 0;
+        for (var i = 1; i <= num; i++) {
+            var x = prompt('请输入第' + i + '个学生成绩')
+            sum += parseFloat(x);
+        }
+        average = sum / num;
+        alert('总成绩为' + sum);
+        alert('平均成绩为' + average);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

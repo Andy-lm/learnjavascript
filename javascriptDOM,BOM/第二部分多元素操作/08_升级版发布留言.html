@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        textarea {
+            resize: none;
+            outline: none;
+            font-size: 20px;
+            vertical-align: bottom;
+            /*使其与基线对齐*/
+            border: 1px solid goldenrod;
+        }
+
+        .lis {
+            padding: 0 10px;
+            width: 200px;
+            height: 30px;
+            background-color: greenyellow;
+            line-height: 30px;
+            color: blueviolet;
+            margin-top: 10px;
+            border-radius: 15px;
+        }
+
+        .lis a {
+            float: right;
+            text-decoration: none;
+            font-size: 18px;
+            line-height: 30px;
+            color: blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 每行的字数，与行数 -->
+    <textarea name="lY" id="" cols="20" rows="5">请输入您的便签...</textarea>
+    <button>提交</button>
+    <ul>
+
+    </ul>
+    <script>
+        var btn = document.querySelector('button');
+        var text = document.querySelector('textarea');
+        var ul = document.querySelector('ul');
+        btn.onclick = function () {
+            var li = document.createElement('li');
+            li.innerHTML = text.value + "<a href='javascript:;'>x</a>";
+            li.className = 'lis';
+            if (text.value === '' || text.value === '请输入您的便签...') {
+                alert('您还没有输入内容！')
+            } else {
+                // ul.appendChild(li);
+                ul.insertBefore(li, ul.children[0]);
+
+
+                //删除节点部分
+                var a = li.children[0]; //获取当前创建的li的子元素
+                a.onclick = function () {
+                    ul.removeChild(a.parentNode);
+                }
+            }
+            text.value = '请输入您的便签...';
+        }
+        text.onfocus = function () {
+            if (text.value === '请输入您的便签...') {
+                text.value = '';
+            }
+        }
+        text.onblur = function () {
+            if (text.value === '') {
+                text.value = '请输入您的便签...';
+            }
+        }
+        //删除功能
+
+    </script>
+</body>
+
+</html>

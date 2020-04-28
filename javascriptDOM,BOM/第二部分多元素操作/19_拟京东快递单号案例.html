@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .search {
+            position: relative;
+            /* 必须要设置宽和高为0 */
+            width: 300px;
+            height: 200px;
+            /* background-color: red; */
+            margin: 100px auto;
+        }
+
+        .search .con {
+            display: none;
+            position: absolute;
+            /* 用定位的负值更简单解决 */
+            top: -45px;
+            left: 0;
+            width: 240px;
+            height: 45px;
+            font-size: 24px;
+            line-height: 45px;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            /* x的位置，y的位置，模糊距离，阴影尺寸，阴影颜色 */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .search .con::after {
+            position: absolute;
+            top: 45px;
+            left: 10px;
+            content: '';
+            width: 0;
+            height: 0;
+            border: 8px solid transparent;
+            border-style: solid dashed dashed;
+            border-top-color: white;
+        }
+
+
+        input {
+            width: 200px;
+            height: 26px;
+            font-size: 20px;
+            margin-top: 15px;
+        }
+
+        /* 如果需要竖的则让上下大一点，横的则让左右大一点 */
+        /* .sj { 
+            width: 0;
+            height: 0;
+            border-width: 0 50px 100px 0;
+            border-style: solid;
+            border-color: red;
+            border-bottom-color: transparent;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="search">
+        <div class="con">123</div>
+        <input type="text" name="" id="" placeholder="请输入您的快递单号" class="jd">
+    </div>
+    <script>
+        var con = document.querySelector('.con');
+        var jd = document.querySelector('.jd');
+        jd.addEventListener('keyup', function () { //只能用弹起触发，按下的话第一次则无法触发，focus只能触发一次
+            if (jd.value === '') {
+                con.style.display = 'none'; //当为空时我们需要让显示出来的部分重新隐藏
+            } else {
+                con.style.display = 'block';
+                con.innerHTML = jd.value;
+            }
+        })
+        jd.addEventListener('blur', function () {
+            con.style.display = 'none';
+        })
+        jd.addEventListener('focus', function () {
+            if (jd.value !== '') { 
+                con.style.display = 'block'; //只有拥有值时才让其显示
+            }
+        })
+    </script>
+</body>
+
+</html>

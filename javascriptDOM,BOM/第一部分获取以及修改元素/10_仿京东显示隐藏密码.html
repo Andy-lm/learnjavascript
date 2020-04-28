@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            position: relative;
+            /* 表单默认会有边框，故会大于盒子 */
+            width: 400px;
+            margin: 100px auto;
+            border-bottom: 1px solid teal;
+        }
+
+        .box input {
+            width: 370px;
+            height: 30px;
+            outline: none;
+            border: none;
+            font-size: 24px;
+            color: teal;
+        }
+
+        .box label img {
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            width: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <label for="">
+            <img src="images/close.png" alt="" id="eye">
+        </label>
+        <input type="password" id="pwd">
+    </div>
+    <script>
+        var eye = document.getElementById('eye');
+        var pwd = document.getElementById('pwd');
+        var flag = 0; //记得利用一个算法，进行判断，密码与文字转变后让参数也随之改变
+        eye.onclick = function () {
+            if (flag == 0) {
+                pwd.type = 'text';
+                eye.src = 'images/open.png';
+                flag = 1;
+                
+            } else {
+                pwd.type = 'password';
+                eye.src = 'images/close.png';
+                flag = 0;
+                
+            }
+        }
+    </script>
+</body>
+
+</html>

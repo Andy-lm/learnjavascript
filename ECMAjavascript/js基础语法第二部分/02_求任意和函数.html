@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 求任意两个数之间的和
+        // 形参不需要声明变量
+        function getsum(start, end) {
+            var sum = 0;
+            for (var i = start; i <= end; i++) {
+                sum += i;
+            }
+            return sum;
+        }
+        alert(getsum(1, 100));
+        alert(getsum(1, 10));
+        // 三元表达式比较两个数大小的函数
+        function getMax(a, b) {
+            return a > b ? a : b;
+        }
+        console.log(getMax(8, 2));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>按钮1</button>
+    <button>按钮2</button>
+    <script>
+        var btns = document.querySelectorAll('button');
+        btns[0].onclick = function () {
+            alert('11');
+        }
+        btns[0].onclick = function () {
+            alert('101');
+        }
+
+        //这种新的监听方式在可以用于处理对同一个按钮的同一个绑定事件
+        //ie9以上才支持
+        btns[1].addEventListener('click', function () {
+            alert('22');
+        })
+        btns[1].addEventListener('click', function () {
+            alert('33');
+        })
+    </script>
+</body>
+
+</html>

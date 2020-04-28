@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .title {
+            display: inline-block;
+            font-size: 32px;
+            color: chartreuse;
+            font-weight: 700;
+        }
+
+        .uname {
+            display: inline-block;
+            font-size: 20px;
+            color: crimson;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="title">欢迎您！</div>
+    <div class="uname">未登录</div>
+    <button>后退</button>
+    <script>
+        var btn = document.querySelector('button')
+        var div = document.querySelector('.uname')
+        var params = location.search; //获取传递过来的字符串参数
+        var str = params.substr(1); //去掉开头的问号
+        var arr = str.split('='); //将其存储在数组中，方便取用
+        div.innerHTML = arr[1];
+        var btn = document.querySelector('button');
+        btn.onclick = function () {
+            window.history.back();
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 定义一个函数
+        function chenfabiao() {
+            var str = '';
+            for (var i = 1; i <= 9; i++) {
+                for (var z = 1; z <= i; z++) {
+                    str += z + '*' + i + '=' + z * i + '\t';
+                }
+                str += '\n';
+            }
+            console.log(str);
+        }
+        // 当没有return值时返回的是undefined
+        var x = chenfabiao(); //引用一个函数
+        console.log(x);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

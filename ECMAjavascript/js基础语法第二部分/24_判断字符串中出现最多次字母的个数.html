@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 遍历整个字符串
+        var temp, index = 0, max_str;
+        var max = 0;
+        var str = 'abccbbbbbbccbcbc';
+        for (var x = 0; x < str.length; x++) {
+            temp = str.charAt(x);
+            // 将遍历得到的字符进行索引检查，并记录出现次数
+            index = str.indexOf(temp); //如果查找到返回索引，否则返回-1
+            var i = 0;
+            while (index !== -1) {
+                // console.log(index);
+                i++;
+                index = str.indexOf(temp, index + 1); //如果该字母存在则继续往后续查找
+            }
+            if (i > max) {
+                max = i;
+                max_str = temp;
+            }
+        }
+        console.log('在字符串中出现最多的字母是：' + max_str + '出现了' + max + '次');
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
