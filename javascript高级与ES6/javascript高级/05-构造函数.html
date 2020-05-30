@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function F1() {
+            this.name = 'lm';
+            this.age = 18;
+        }
+        // 创建一个实例方法
+        F1.prototype = {
+            // 当我们重新赋值构造函数的原型对象时，需要手动给其添加constructor属性
+            constructor: F1,
+            sing: function () {
+                console.log('hahahah');
+                console.log(this);
+            },
+            dance: function () {
+                console.log('我会跳舞');
+            }
+        };
+        // 创建一个静态方法
+        F1.say = function () {
+            console.log(11);
+            console.log(this);
+        }
+        var mode = new F1();
+        mode.sing = function () { 
+            console.log('mode sing');
+        }
+        F1.say();
+        mode.sing();
+        console.log(mode);
+        console.log(mode.__proto__);
+        console.log(F1.prototype);
+
+    </script>
+</body>
+
+</html>

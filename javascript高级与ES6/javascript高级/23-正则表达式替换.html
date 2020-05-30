@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        textarea {
+            resize: none;
+            border: 1px solid blueviolet;
+            outline: none;
+            font-size: 16px;
+            font-weight: 700;
+            color: chartreuse;
+        }
+
+        div {
+            width: 300px;
+            height: 30px;
+            background-color: blueviolet;
+            text-align: center;
+            line-height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+    <button class="btn">提交</button>
+    <div></div>
+    <script>
+        var text = document.querySelector('textarea');
+        var btn = document.querySelector('.btn');
+        var div = document.querySelector('div');
+        btn.addEventListener('click', function () {
+            // 全局匹配性感两个字
+            var str = text.value.replace(/性感/g, '**');
+            div.innerHTML = str;
+        })
+    </script>
+</body>
+
+</html>

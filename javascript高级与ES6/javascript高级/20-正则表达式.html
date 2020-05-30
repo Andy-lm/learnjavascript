@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var regexp = new RegExp(/123/);
+        // console.log(regexp);
+        // var rg = /456/;
+        // console.log(rg.test('456'));
+        // var str = prompt('请输入：abc');
+        // var rg1 = /abc/;
+        // console.log(rg1.test(str));
+        console.log('------------');
+        var rg = /^a*$/; // 出现0次或多次
+        console.log(rg.test('a'));
+        console.log(rg.test(''));
+        console.log(rg.test('aaaaa'));
+        console.log('------------');
+        var rg1 = /^a+$/; // 出现一次或多次
+        console.log(rg1.test('a'));
+        console.log(rg1.test(''));
+        console.log(rg1.test('aaaaa'));
+        console.log('------------');
+        var rg2 = /^a?$/; // 出现0次或1次
+        console.log(rg2.test('a'));
+        console.log(rg2.test(''));
+        console.log(rg2.test('aaaaa'));
+        console.log('------------');
+        var rg2 = /^a{5}$/; // 出现5次
+        console.log(rg2.test('a'));
+        console.log(rg2.test(''));
+        console.log(rg2.test('aaaaa'));
+        console.log('------------');
+        var rg3 = /^[^a-zA-Z0-9_-]$/; // 表示不包含大小写字母，数字,下划线,短横线之一
+        console.log(rg3.test('a'));
+        console.log(rg3.test('aaaaaaa'));
+        console.log(rg3.test(' '));
+        console.log(rg3.test('A'));
+        console.log(rg3.test('_'));
+        console.log(rg3.test('!'));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>点击按钮</button>
+    <button>点击按钮</button>
+    <button>点击按钮</button>
+    <button>点击按钮</button>
+    <button>点击按钮</button>
+    <button>点击按钮</button>
+    <script>
+        var btns = document.querySelectorAll('button');
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener('click', function () {
+                this.disabled = true;
+                var time = 5;
+                var second = setInterval(function () {
+                    this.innerHTML = time + '秒后再次点击';
+                    if (time === 0) {
+                        this.disabled = false;
+                        clearInterval(second);
+                        this.innerHTML = '点击按钮';
+                    }
+                    time--;
+                    // bind用来改变this的指向
+                }.bind(this), 1000);
+
+                // setTimeout(function () {
+                //     this.disabled = false;
+                //     clearInterval(second);
+                //     this.innerHTML = '点击按钮';
+                // }.bind(this), 5000);
+            })
+        }
+    </script>
+</body>
+
+</html>

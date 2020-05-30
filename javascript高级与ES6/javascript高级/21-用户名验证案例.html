@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: blueviolet;
+        }
+
+        .uname {
+            outline: blueviolet;
+
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" class="uname" placeholder="请输入您的用户名"><span class="message">请输入您的用户名</span>
+    <div></div>
+    <script>
+        // 要求拥有6至16位满足条件的数字与字母，短横线，下划线
+        var rg = /^[a-zA-Z0-9-_]{6,16}$/;
+        // console.log(rg.test('andy'));
+        // console.log(rg.test('andy-lm'));
+        // console.log(rg.test('Andy-lm'));
+        // console.log(rg.test('Andy!lm'));
+        var uname = document.querySelector('.uname');
+        var message = document.querySelector('.message');
+        var div = document.querySelector('div');
+        uname.onblur = function () {
+            if (rg.test(uname.value)) {
+                message.innerHTML = '您输入正确';
+                message.style.color = 'green';
+                div.style.backgroundColor = 'green';
+            } else if (uname.value === '') {
+                message.innerHTML = '请输入您的用户名';
+                message.style.color = 'blueviolet';
+                div.style.backgroundColor = 'blueviolet';
+            } else {
+                message.innerHTML = '您输入不正确';
+                message.style.color = 'red';
+                div.style.backgroundColor = 'red';
+            }
+        }
+    </script>
+</body>
+
+</html>

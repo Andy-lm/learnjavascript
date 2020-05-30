@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [1, 2, 3];
+        // console.log(Math.max(1, 28, 3));
+
+        // apply方法因为其传递的参数可以为一个数组，所以常常用于对数组的操作
+        // 当this指向不确定的时候我们只需让其指向方法的调用者即可
+        console.log(Math.max.apply(Math, arr));
+        var obj = {
+            name: 'lm'
+        }
+        function fn(a, b) {
+            console.log(this);
+            console.log(a + b);
+        }
+        var newFn = fn.bind(obj, 6, 8);
+        console.log(newFn);
+        newFn();
+    </script>
+</body>
+
+</html>

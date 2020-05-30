@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var car = (function () {
+            var start = 13;
+            var total = 0;
+            return {
+                price: function (m) {
+                    // this指向的是这个对象，相当于对象调用了其内部的方法
+                    console.log(this);
+                    if (m <= 3) {
+                        total = start;
+                    } else {
+                        total = start + (m - 3) * 5;
+                    }
+                    return total;
+                },
+                yd: function (flag) {
+                    return flag ? total + 10 : total;
+                }
+            }
+        })()
+        console.log(car.price(19));
+        console.log(car.yd(true));
+        
+        console.log(car.price(2));
+        console.log(car.yd(true));
+    </script>
+</body>
+
+</html>

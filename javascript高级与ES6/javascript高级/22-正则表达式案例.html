@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 电话号码格式 456-48541526 或 6548-7845269
+        // var rg = /^\d{3}-\d{8}|\d{4}-\d{7}$/;
+        var rg = /^\d{3,4}-\d{7,8}$/;
+        console.log(rg.test('456-48541526'));
+        console.log(rg.test('6548-7845269'));
+        console.log(rg.test('348-78845269'));
+        console.log(rg.test('3484-78845269'));
+    </script>
+</body>
+
+</html>

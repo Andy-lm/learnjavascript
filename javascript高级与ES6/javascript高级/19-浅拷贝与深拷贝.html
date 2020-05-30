@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var data = {
+            uname: 'li',
+            age: 18,
+            son: {
+                xm: 'zh',
+                nl: 6
+            },
+            hoppy: ['dfj'],
+            sex: 'male'
+        }
+        var obj = {};
+        // for (var k in data) {
+        //     obj[k] = data[k];
+        // }
+        // console.log(obj);
+        function skb(oldObj, newObj) {
+            for (var k in oldObj) {
+                if (oldObj[k] instanceof Array) {
+                    newObj[k] = [];
+                    skb(oldObj[k], newObj[k]);
+                } else if (oldObj[k] instanceof Object) {
+                    newObj[k] = {};
+                    skb(oldObj[k], newObj[k]);
+                }
+                else {
+                    newObj[k] = oldObj[k];
+                }
+            }
+        }
+        skb(data, obj)
+        console.log(obj);
+
+    </script>
+</body>
+
+</html>

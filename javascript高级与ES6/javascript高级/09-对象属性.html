@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var obj = {
+            name: 'km',
+            age: 18
+        }
+        console.log(Object.keys(obj));
+        Object.defineProperty(obj, 'address', {
+            value: '123456',
+        })
+        // 不可以被修改
+        obj.address = '11111';
+        // 不可以被枚举
+        console.log(Object.keys(obj));
+        for (var k in obj) {
+            console.log(obj[k]);
+        }
+        // 不可以被删除
+        delete obj.address;
+        console.log(obj);
+    </script>
+</body>
+
+</html>
