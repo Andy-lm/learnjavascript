@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = ['lm', 2, 3];
+        // console.log(arr instanceof Array);
+
+        // 扩展运算符将数组转化为逗号分隔的参数序列
+        console.log(...arr);
+        console.log('lm', 2, 3);
+        var arr1 = ['x', 'y'];
+        // 将多个参数一次性放入数组之中
+        arr1.push(...arr);
+        console.log(arr1);
+        arr1.push('88', '99');
+        console.log(arr1);
+    </script>
+</body>
+
+</html>

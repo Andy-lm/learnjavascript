@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>0</div>
+    <div>1</div>
+    <div>2</div>
+
+    <script>
+        var div = document.querySelectorAll('div');
+        console.log(div);
+        // console.log(div[0]);
+        // 两种方法均可将伪数组转化为真数组
+        var arr = [...div];
+        console.log(arr);
+        var arr1 = [];
+        arr1 = [].slice.call(div);
+        console.log(arr1);
+        var likeArr = {
+            '0': 'lm',
+            '1': '2',
+            length: 2
+        }
+        console.log(likeArr);
+        // var arr2 = Array.from(likeArr);
+        // var arr2 = [].slice.call(likeArr);
+        var arr2 = Array.from(div);
+        console.log(arr2);
+
+    </script>
+</body>
+
+</html>

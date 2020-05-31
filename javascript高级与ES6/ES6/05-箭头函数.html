@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 当函数体只有一句话，且执行结果就是返回值时大括号可以省略
+        const fn = (num1, num2) => num1 + num2;
+        console.log(fn(5, 6));
+        const fn2 = () => {
+            console.log(111111111);
+        }
+        fn2();
+        // 当形参只有一个时可以省略小括号
+        const fn3 = a => {
+            a++;
+            console.log(a);
+        }
+        fn3(6);
+        // 当形参只有一个，当函数体只有一句话，执行结果就是返回值时大括号可以省略
+        const fn4 = v => v;
+        console.log(fn4(999999999));
+        
+
+    </script>
+</body>
+
+</html>

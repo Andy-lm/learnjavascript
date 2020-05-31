@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [{
+            id: 1,
+            uname: 'lm'
+        }, {
+            id: 2,
+            uname: 'zs'
+        }];
+        var obj = arr.find(function (value, index) {
+            return value.id === 2;
+        })
+        var index = arr.findIndex(function (value, index) {
+            return value.id === 2;
+        })
+        console.log(obj);
+        console.log(index);
+
+    </script>
+</body>
+
+</html>

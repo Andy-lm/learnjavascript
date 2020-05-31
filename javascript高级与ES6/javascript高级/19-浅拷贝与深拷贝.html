@@ -16,7 +16,7 @@
                 xm: 'zh',
                 nl: 6
             },
-            hoppy: ['dfj'],
+            hoppy: ['dfj', '11'],
             sex: 'male'
         }
         var obj = {};
@@ -38,6 +38,14 @@
                 }
             }
         }
+        var arr = [];
+        var arr1 = [1, 6, 8];
+        // 此方法也可以用来遍历数组，但遍历后的数组转化为了一个伪数组
+        for (var key in arr1) {
+            arr[key] = arr1[key];
+        }
+        console.log(arr);
+
         skb(data, obj)
         console.log(obj);
 

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var obj = {
+            name: 'zs',
+            age: 18,
+            say: () => {
+                console.log(this);
+
+            },
+            hello: function () {
+                console.log(this.age);
+            }
+        }
+        // 箭头函数中的this指向定义位置的作用域，但对象不属于一个独立的作用域故其内部this指向window
+        obj.say();
+        // 普通函数this指向调用者
+        obj.hello();
+    </script>
+</body>
+
+</html>
