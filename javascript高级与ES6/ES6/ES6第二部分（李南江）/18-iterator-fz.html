@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class myArray {
+            constructor() {
+                for (let i = 0; i < arguments.length; i++) {
+                    this[i] = arguments[i];
+                }
+                this.length = arguments.length;
+            }
+            [Symbol.iterator]() {
+                let index = 0;
+                let that = this;
+                return {
+                    next: function () {
+                        if (index < that.length) {
+                            // 表示使用对应的类中的值
+                            return { value: that[index++], done: false };
+                        } else {
+                            return { value: that[index], done: true };
+                        }
+                    }
+                }
+            }
+        }
+        // 可以使用for of 后便可在数值中找到Symbol.iterator属性
+        let arr = new myArray(1, 3, 5);
+        for (let k of arr) {
+            console.log(k);
+        }
+        let obj = arr[Symbol.iterator]();
+        console.log(obj.next());
+        console.log(obj.next());
+        console.log(obj.next());
+        console.log(obj.next());
+        console.log(obj);
+
+        console.log(arr);
+
+    </script>
+</body>
+
+</html>

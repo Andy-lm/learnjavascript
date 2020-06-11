@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10-移动端点透问题</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            text-align: center;
+            font-size: 40px;
+        }
+        .click{
+            width: 300px;
+            height: 300px;
+            background: red;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 100px;
+        }
+        .tap{
+            width: 200px;
+            height: 200px;
+            background: blue;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 150px;
+        }
+    </style>
+</head>
+<body>
+<div class="click">click</div>
+<div class="tap">tap</div>
+<script>
+    /*
+    1.移动端点透问题
+    当一个元素放覆盖了另一个元素, 覆盖的元素监听touch事件,而下面的元素监听click事件
+    并且touch事件触发后覆盖的元素就消失了, 那么就会出现点透问题
+
+    2.移动端点透问题出现的原因
+    2.1当手指触摸到屏幕的时候，系统生成两个事件，一个是touch 一个是click
+    2.2touch事件先执行,执行完后从文档上消失
+    2.3click事件有100~300ms延迟, 所以后执行.
+    2.4但click事件执行的时候触发的元素已经消失了, 对应的位置现在是下面的元素, 所以就触发了下面元素的click事件
+
+    3.移动端点透问题解决方案
+    在touch事件中添加event.preverDefault(); 阻止事件扩散
+    * */
+    let oClick = document.querySelector(".click");
+    let oTap = document.querySelector(".tap");
+
+    oTap.ontouchstart = function (event) {
+        this.style.display = "none";
+        event.preventDefault(); //  阻止事件扩散
+    }
+    oClick.onclick = function () {
+        console.log("click");
+    }
+</script>
+</body>
+</html>

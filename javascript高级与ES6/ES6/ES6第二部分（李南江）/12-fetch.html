@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 类似于使用promise改进过的ajax
+        fetch("http://127.0.0.1/es6_lnj/11-promise-Ajax.php?sex=male&teacher=lnj", {
+            method: "get"
+        }).then(function (res) {
+            // return res.text(); 如果后端传递过来的数据为字符串格式使用此方法接收
+            return res.json();
+        }).then(function (msg) {
+            console.log(msg);
+        }).catch(function (e) {
+            console.log(e);
+        })
+    </script>
+</body>
+
+</html>

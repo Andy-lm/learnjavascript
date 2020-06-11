@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>29-promise-catch方法</title>
+</head>
+<body>
+<script>
+    /*
+    0.catch方法
+    catch 其实是 then(undefined, () => {}) 的语法糖
+    * */
+    /*
+    let promise = new Promise(function (resolve, reject) {
+        // resolve(); // 将状态修改为成功
+        reject(); // 将状态修改为失败
+    });
+    promise.catch(function () {
+        console.log("abc");
+    });
+    */
+
+    /*
+    2.catch方法
+    注意点: 如果需要分开监听, 也就是通过then监听成功通过catch监听失败
+    那么必须使用链式编程, 否则会报错
+    * */
+    /*
+    let promise = new Promise(function (resolve, reject) {
+        // resolve(); // 将状态修改为成功
+        reject(); // 将状态修改为失败
+    });
+    // promise.then(function () {
+    //     console.log("成功");
+    // }).catch(function () {
+    //     console.log("失败");
+    // });
+
+    promise.then(function () {
+        console.log("成功");
+    });
+    promise.catch(function () {
+        console.log("失败");
+    });
+
+    // promise.then(function () {
+    //     console.log("成功");
+    // }, function () {
+    //     console.log("失败");
+    // });
+    */
+
+    /*
+    3.catch方法
+    不使用链式编程的原因是
+    1.如果promise的状态是失败, 但是没有对应失败的监听就会报错
+    2.then方法会返回一个新的promise, 新的promise会继承原有promise的状态
+    3.如果新的promise状态是失败, 但是没有对应失败的监听也会报错
+    * */
+    let promise = new Promise(function (resolve, reject) {
+        // resolve(); // 将状态修改为成功
+        reject(); // 将状态修改为失败
+    });
+    let p2 = promise.then(function () {
+        console.log("成功");
+    });
+    console.log(p2);
+    promise.catch(function () {
+        console.log("失败1");
+    });
+    p2.catch(function () {
+        console.log("失败2");
+    });
+
+</script>
+</body>
+</html>

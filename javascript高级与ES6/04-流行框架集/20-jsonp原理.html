@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>20-jsonp原理</title>
+</head>
+<body>
+<button>我是按钮</button>
+<script>
+    /*
+    1.什么是JSONP?
+    JSONP让网页从别的地址（跨域的地址）那获取资料，即跨域读取数据
+
+    2.JSONP实现跨域访问的原理
+    2.1在同一界面中可以定义多个script标签
+    2.2同一个界面中多个script标签中的数据可以相互访问
+    2.3可以通过script的src属性导入其它资源
+    2.4通过src属性导入其它资源的本质就是将资源拷贝到script标签中
+    2.5script的src属性不仅能导入本地资源, 还能导入远程资源
+    2.6由于script的src属性没有同源限制, 所以可以通过script的src属性来请求跨域数据
+    * */
+    // let num = 666;
+    // function demo() {
+    //     console.log("demo");
+    // }
+</script>
+<!--
+<script src="20-jsonp.js">
+    // let num = 777;
+    // function test() {
+    //     console.log("test777");
+    // }
+</script>
+-->
+<!--<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>-->
+<script src="http://127.0.0.1:80/jQuery/Ajax/20-jsonp.php"></script>
+<script>
+    // console.log(num);
+    // demo();
+
+    // console.log(num);
+    // test();
+
+    // $("button").click(function () {
+    //     alert("按钮被点击了");
+    // });
+
+    /*
+    当前网页的地址: http://127.0.0.1:63342/jQuery/Ajax/20-jsonp%E5%8E%9F%E7%90%86.html
+    远程资源的地址: http://127.0.0.1:80/jQuery/Ajax/20-jsonp.php
+    */
+    console.log(num);
+</script>
+</body>
+</html>

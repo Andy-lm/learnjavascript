@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr = [
+            "http://www.it666.com/files/system/block_picture_1555415767.png",
+            "http://wwww.it666.com/files/system/block_picture_1555422597.jpg",
+            "http://www.it666.com/files/system/block_picture_1555419713.jpg"
+        ];
+        function loadImages(url) {
+            return new Promise(function (resolve, reject) {
+                // 使用此方法创建一个新的img对象
+                setTimeout(function () {
+                    let oImg = new Image();
+                    oImg.src = url;
+                    oImg.onload = function () {
+                        resolve(oImg);
+                    }
+                    oImg.onerror = function () {
+                        reject('图片加载失败' + oImg.src);
+                    }
+                }, 1000)
+            })
+        }
+        let p2 = new Promise(function (resolve, reject) {
+            setTimeout(function () {
+                let oImg = new Image();
+                oImg.src = arr[0];
+                oImg.onload = function () {
+                    document.body.appendChild(oImg);
+                    resolve(oImg);
+                }
+            }, 5000)
+        })
+        Promise.race([loadImages(arr[1]), p2]).then(function (img) {
+            console.log(img);
+
+        }).catch(function (e) {
+            console.log(e);
+        })
+    </script>
+</body>
+
+</html>

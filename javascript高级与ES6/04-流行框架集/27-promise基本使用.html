@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>27-promise基本使用</title>
+</head>
+<body>
+<script>
+    /*
+    1.什么是Promise?
+    Promise是ES6中新增的一个对象,
+    通过Promise就可以实现 用同步的流程来表示异步的操作
+    通过Promise就可以 避免回调函数层层嵌套(回调地狱)问题
+
+    2.如何创建Promise对象?
+    new Promise(function(resolve, reject){});
+    promise对象不是异步的, 只要创建promise对象就会立即执行存放的代码
+
+    3.Promise是如何实现 通过同步的流程来表示异步的操作的?
+    promise对象是通过状态的改变来实现的, 只要状态发生改变就会自动触发对应的函数
+
+    4.Promise对象三种状态
+    pending:   默认状态，只要没有告诉promise任务是成功还是失败就是pending状态
+    fulfilled(resolved): 只要调用resolve函数, 状态就会变为fulfilled, 表示操作成功
+    rejected:  只要调用rejected函数, 状态就会变为rejected, 表示操作失败
+    注意点: 状态一旦改变既不可逆, 既从pending变为fulfilled, 那么永远都是fulfilled
+                                  既从pending变为rejected, 那么永远都是rejected
+
+    5.监听Promise状态改变
+    我们还可以通过函数来监听状态的变化
+    resolved --> then()
+    rejected --> catch()
+    * */
+    // console.log("1");
+    let promise = new Promise(function (resolve, reject) {
+        console.log("2");
+        reject();
+        // resolve();
+    });
+    // console.log("3");
+    // console.log(promise);
+    promise.then(function () {
+        console.log("then");
+    });
+    promise.catch(function () {
+        console.log("catch");
+    });
+</script>
+</body>
+</html>

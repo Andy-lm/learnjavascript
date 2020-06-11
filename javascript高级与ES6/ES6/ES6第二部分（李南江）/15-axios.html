@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/axios.js"></script>
+</head>
+
+<body>
+    <script>
+        // axios.get("http://127.0.0.1/es6_lnj/11-promise-Ajax.php?teacher=lnj&age=18")
+        //     .then(function (msg) {
+        //         console.log(msg.data);
+
+        //     }).catch(function (e) {
+        //         console.log(e);
+
+        //     })
+        // axios.post("http://127.0.0.1/es6_lnj/11-promise-Ajax.php", {
+        //     teacher: "lnj",
+        //     age: 18
+        // })
+        //     .then(function (msg) {
+        //         console.log(msg.data);
+
+        //     }).catch(function (e) {
+        //         console.log(e);
+
+        //     })
+
+        // 设置延迟时间
+        // axios.defaults.timeout = 1000; 
+        // 设置主域名
+        axios.defaults.baseURL = "http://127.0.0.1";
+        axios.post("/es6_lnj/11-promise-Ajax.php")
+            .then(function (msg) {
+                console.log(msg.data);
+
+            }).catch(function (e) {
+                console.log(e);
+
+            })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>23-JSONP封装</title>
+</head>
+<body>
+<script src="myJsonp.js"></script>
+<script>
+    myJSONP({
+            url: "http://127.0.0.1:80/jQuery/Ajax/22-jsonp.php",
+            data:{
+                "teacher": "lnj",
+                "age": 34
+            },
+            jsonp: "cb",  // 告诉jQuery服务器在获取回调函数名称的时候需要用什么key来获取
+            jsonpCallback: "lnj", // 告诉jQuery服务器在获取回调函数名称的时候回调函数的名称是什么
+            success: function (msg) {
+                console.log(msg);
+            }
+        });
+</script>
+</body>
+</html>

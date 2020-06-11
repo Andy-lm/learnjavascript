@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let promise = new Promise(function (resolve, reject) {
+            console.log('Promise');
+            // resolve('111');
+            reject('222');
+        })
+        promise.then(function (data) {
+            console.log('then');
+            console.log(data);
+
+        })
+        promise.catch(function (data) {
+            console.log('catch');
+            console.log(data);
+        })
+    </script>
+</body>
+
+</html>

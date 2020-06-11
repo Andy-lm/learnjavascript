@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function request() {
+            return new Promise(function (resolve, reject) {
+                setTimeout(function () {
+                    resolve("拿到数据啦");
+                }, 3000)
+            })
+        }
+        // function* fn() {
+        //     yield request();
+        //     yield request();
+        //     yield request();
+        // }
+        // 利用generator做异步编程请求
+        // let it = fn();
+        // it.next().value.then(function (data) {
+        //     console.log(data + "1");
+        //     return it.next().value;
+        // }).then(function (data) {
+        //     console.log(data + "2");
+        //     return it.next().value;
+        // }).then(function (data) {
+        //     console.log(data + "3");
+        //     return it.next().value;
+        // })
+        async function fn() {
+            let res1 = await request();
+            console.log(res1);
+            let res2 = await request();
+            console.log(res2);
+            let res3 = await request();
+            console.log(res3);
+        }
+        // 其返回值是一个promise对象
+        let obj = fn();
+        console.log(obj);
+
+    </script>
+</body>
+
+</html>

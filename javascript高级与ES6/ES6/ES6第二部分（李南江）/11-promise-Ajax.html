@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/myAjax-promise.js"></script>
+    <!-- <script src="js/myAjax2.js"></script> -->
+</head>
+
+<body>
+    <script>
+        // 使用promise改善过的
+        let p2 = ajax({// type, url, data, tsuimeout, success, error
+            type: 'get',
+            url: '11-promise-Ajax.php',
+            data: {
+            }
+        }).then(function (xhr) {
+            let str = xhr.responseText;
+            let json = eval('(' + str + ')');
+            console.log(json);
+            // 可以按照进行ajax操作，这才是promise的精髓
+            // return ajax({// type, url, data, tsuimeout, success, error
+            //     type: 'get',
+            //     url: '11-promise-Ajax.php',
+            //     data: {
+            //     }
+            // })
+        }).catch(function (xhr) {
+            console.log(xhr.status);
+        })
+        setTimeout(function () {
+            console.log(p2);
+        }, 5000)
+    </script>
+</body>
+
+</html>

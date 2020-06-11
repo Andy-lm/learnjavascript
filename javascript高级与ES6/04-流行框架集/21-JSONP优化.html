@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>21-JSONP优化</title>
+</head>
+<body>
+<!--<script src="http://127.0.0.1:80/jQuery/Ajax/20-jsonp.php?cb=test"></script>-->
+<script>
+    /*
+    优化一
+    1.在企业开发中通过JSONP来获取跨域的数据,
+    一般情况下服务器返回的都不会是一个变量, 而是一个函数的调用
+    */
+
+    /*
+    优化二
+    2.当前服务器返回的函数调用名称写死了
+    服务器返回函数叫什么名称, 我们本地就必须定义一个叫什么名称的函数
+    */
+    /*
+    解决方案:
+    通过URL参数的方式来动态指定函数名称
+    */
+
+    /*
+    优化三
+    3.由于script标签默认是同步, 前面的script标签没有加载完数据, 后面的script标签就不会被执行
+    所以请求数据的script标签必须放到后面
+    */
+    /*
+    解决方案:
+    通过JS动态创建script标签, 因为JS动态创建的script标签默认就是异步的,
+    不用等到前面的标签加载完就可以执行后面的script标签
+    */
+
+    let oScript = document.createElement("script");
+    oScript.src = "http://127.0.0.1:80/jQuery/Ajax/20-jsonp.php?cb=test";
+    document.body.appendChild(oScript);
+
+    function test(data) {
+        console.log(data);
+    }
+</script>
+<!--
+<script src="http://127.0.0.1:80/jQuery/Ajax/20-jsonp.php?cb=test">
+    // demo(666);
+    // test(666);
+</script>
+-->
+</body>
+</html>

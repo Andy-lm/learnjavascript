@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class myPromise {
+            // constructor内的语句会自动执行
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+                this.say('你好')
+            }
+            say(speak) {
+                console.log(this.name + speak);
+                // throw new Error('未知错误')
+            }
+        }
+        let p1 = new myPromise('lm', 18);
+        console.log(p1.name);
+        // p1.say('');
+
+    </script>
+</body>
+
+</html>

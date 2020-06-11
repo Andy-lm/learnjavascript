@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let name = Symbol("name");
+        let age = Symbol("age");
+        let obj = {
+            [name]: 'lm',
+            [age]: 19,
+            gender: 'man',
+            hobby: "play"
+        }
+        for (let k in obj) {
+            console.log(k);
+        }
+        // 重复的数据变量不会被赋值
+        obj[Symbol('name1')] = "zs";
+        // console.log(obj);
+        console.log(obj[name]);
+        let arr = Object.getOwnPropertySymbols(obj);
+        console.log(arr[0]);
+
+
+        // let str = Symbol('str');
+        // console.log(typeof str);
+        // console.log(String(str));
+        // console.log(Boolean(str));
+        // 不可以转化为数值型
+        // console.log(Number(str));
+
+
+
+    </script>
+</body>
+
+</html>

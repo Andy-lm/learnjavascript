@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let obj = {
+            name: "lm",
+            age: 18,
+            gender: "man",
+            [Symbol.iterator]() {
+                let index = 0;
+                let that = this;
+                let keys = Object.keys(this);
+                return {
+                    next() {
+                        if (index < keys.length) {
+                            return { value: that[keys[index++]], done: false };
+                        } else {
+                            return { value: keys[index], done: true };
+                        }
+                    }
+                }
+            }
+        }
+        let it = obj[Symbol.iterator]();
+        console.log(it.next());
+        console.log(it.next());
+        console.log(it.next());
+        console.log(it.next());
+        console.log(it.next());
+        for (let value of obj) {
+            console.log(value);
+        }
+    </script>
+</body>
+
+</html>

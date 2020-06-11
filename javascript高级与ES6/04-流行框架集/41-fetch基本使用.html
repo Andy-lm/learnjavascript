@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>41-fetch基本使用</title>
+</head>
+<body>
+<script>
+    /*
+    1.什么是fetch?
+    和Ajax一样都是用于请求网络数据的
+    fetch是ES6中新增的, 基于Promise的网络请求方法
+
+    2.fetch基本使用
+    fetch(url, {options})
+    .then()
+    .catch();
+
+    http://127.0.0.1/jQuery/Ajax/41.php
+    */
+    /*
+    fetch("http://127.0.0.1/jQuery/Ajax/41.php?teacher=lnj&age=34", {
+        method: "get"
+    }).then(function (res) {
+        // console.log(res.text());
+        // return res.text();
+        return res.json();
+    }).then(function (data) {
+        console.log(data);
+        console.log(typeof data);
+    }).catch(function (e) {
+        console.log(e);
+    });
+    */
+    fetch("http://127.0.0.1/jQuery/Ajax/41.php", {
+        method: "post",
+        body: JSON.stringify({teacher:"zq", age:666})
+    }).then(function (res) {
+        // console.log(res.text());
+        // return res.text();
+        return res.json();
+    }).then(function (data) {
+        console.log(data);
+        console.log(typeof data);
+    }).catch(function (e) {
+        console.log(e);
+    });
+</script>
+</body>
+</html>

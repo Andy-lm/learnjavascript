@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13-滑动事件练习</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            touch-action: none;
+        }
+        .box{
+            overflow: hidden;
+        }
+        .box>.box-top{
+            height: 50px;
+            position: relative;
+        }
+        .box>.box-top>ul{
+            list-style: none;
+            width: 100%;
+            display: flex;
+        }
+        .box>.box-top>ul>li{
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            flex-grow: 1;
+            background: #6c6c6c;
+        }
+        .box>.box-top>ul>.active{
+            color: #f40;
+            background: #ccc;
+        }
+        .box>.box-top>.line{
+            width: 50%;
+            height: 2px;
+            background: #f40;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+        .box>.box-bottom{
+            width: 200%;
+            display: flex;
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+        .box>.box-bottom>ul{
+            list-style: none;
+            flex-grow: 1;
+        }
+        .box>.box-bottom>ul>li{
+            line-height: 30px;
+            border-bottom: 1px solid #ccc;
+        }
+    </style>
+    <script src="js/zepto.js"></script>
+    <script src="js/event.js"></script>
+    <script src="js/touch.js"></script>
+    <script src="js/fx.js"></script>
+    <script src="js/selector.js"></script>
+</head>
+<body>
+<div class="box">
+    <div class="box-top">
+        <ul>
+            <li class="active">新闻</li>
+            <li>科技</li>
+        </ul>
+        <p class="line"></p>
+    </div>
+    <div class="box-bottom">
+        <ul class="list1">
+            <li>我是新闻1</li>
+            <li>我是新闻2</li>
+            <li>我是新闻3</li>
+            <li>我是新闻4</li>
+            <li>我是新闻5</li>
+            <li>我是新闻6</li>
+            <li>我是新闻7</li>
+            <li>我是新闻8</li>
+            <li>我是新闻9</li>
+            <li>我是新闻10</li>
+        </ul>
+        <ul class="list2">
+            <li>我是军事1</li>
+            <li>我是军事2</li>
+            <li>我是军事3</li>
+            <li>我是军事4</li>
+            <li>我是军事5</li>
+            <li>我是军事6</li>
+            <li>我是军事7</li>
+            <li>我是军事8</li>
+            <li>我是军事9</li>
+            <li>我是军事10</li>
+        </ul>
+    </div>
+</div>
+<script>
+    $(".box-top li").on("nj:click",function () {
+        $(this).addClass("active").siblings().removeClass("active");
+        let currentIndex = $(this).index();
+        $(".line").animate({left: currentIndex * $(this).width() + "px"}, 500);
+        $(".box-bottom").animate({left: -currentIndex * $(".list1").width() + "px"}, 500);
+    });
+    $(".box-top li").click(function () {
+        $(this).trigger("nj:click");
+    });
+    $(".box").swipeLeft(function () {
+        $(".box-top li:last").trigger("nj:click");
+    });
+    $(".box").swipeRight(function () {
+        $(".box-top li:first").trigger("nj:click");
+    });
+</script>
+</body>
+</html>

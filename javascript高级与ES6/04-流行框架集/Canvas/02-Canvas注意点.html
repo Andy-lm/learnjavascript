@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02-Canvas注意点</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        canvas{
+            background: red;
+            /*width: 500px;*/
+            /*height: 500px;*/
+        }
+    </style>
+</head>
+<body>
+<!--1.创建一个画布-->
+<canvas width="500" height="500"></canvas>
+<script>
+    /*
+    1.canvas有默认的宽度和高度
+    默认宽300px, 高150px
+    */
+    /*
+    2.不能通过CSS设置画布的宽高
+    通过CSS设置画布宽高会在默认宽高的基础上拉伸
+    如果需要设置canvas宽高请通过元素行内属性width和height设置
+    */
+    /*
+    3.线条默认宽度和颜色
+    通过canvas绘制的线条默认宽度是1px, 颜色是纯黑色
+    但是由于默认情况下canvas会将线条的中心点和像素的底部对齐,
+    所以会导致显示效果是2px和非纯黑色问题
+    * */
+
+    // 2.拿到画布
+    let oCanvas = document.querySelector("canvas");
+    // 3.拿到绘制工具
+    let oCtx = oCanvas.getContext("2d");
+    // 4.利用绘制工具绘制直线
+    // 4.1设置起始位置
+    oCtx.moveTo(50, 50.5);
+    // 4.2设置路径上的点
+    oCtx.lineTo(200, 50.5);
+    // 4.2绘制已定义的路径
+    oCtx.stroke();
+</script>
+</body>
+</html>

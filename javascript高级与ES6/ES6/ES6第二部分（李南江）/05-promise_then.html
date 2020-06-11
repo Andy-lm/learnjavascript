@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let promise = new Promise(function (resolve, reject) {
+            console.log(1111);
+            // resolve('请求成功');
+            reject('请求失败');
+        });
+        // 返回一个新的promise对象
+        let promise2 = promise.then(function (data) {
+            console.log(data);
+        }, function (data) {
+
+            console.log(data);
+            // 这里也可以返回一个promise对象
+            return 'aaa';
+
+        })
+        // 不管上一个promise请求失败还是成功，都在下一个promise成功的函数中接收
+        promise2.then(function (data) {
+
+            console.log("请求成功" + data);
+            // catch也可以用来捕获上一个then的错误
+            xxxx;
+
+        }).catch(function (data) {
+            console.log("请求失败" + data);
+        })
+        console.log(promise2);
+        console.log(promise);
+
+    </script>
+</body>
+
+</html>

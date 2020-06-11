@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            width: 100%;
+            height: 8000px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        let arr = [
+            "http://www.it666.com/files/system/block_picture_1555415767.png",
+            "http://www.it666.com/files/system/block_picture_1555422597.jpg",
+            "http://www.it666.com/files/system/block_picture_1555419713.jpg"
+        ];
+        function loadImages(url) {
+            return new Promise(function (resolve, reject) {
+                // 使用此方法创建一个新的img对象
+                let oImg = new Image();
+                oImg.src = url;
+                oImg.onload = function () {
+                    resolve(oImg);
+                }
+                oImg.onerror = function () {
+                    reject('图片加载失败' + oImg.src);
+                }
+            })
+        }
+
+        // // 采用链式编程更为方便
+        // loadImages(arr[0]).then(function (img) {
+        //     // console.log(img);
+        //     document.body.appendChild(img);
+        //     return loadImages(arr[1]);
+        // }).then(function (img) {
+        //     // console.log(img);
+        //     document.body.appendChild(img);
+        //     return loadImages(arr[2]);
+        // }).then(function (img) {
+        //     // console.log(img);
+        //     document.body.appendChild(img);
+        // }).catch(function (msg) {
+        //     console.log(msg);
+        // })
+        Promise.all([loadImages(arr[0]), loadImages(arr[1]), loadImages(arr[2])])
+            .then(function (Images) {
+                Images.forEach(function (item) {
+                    document.body.appendChild(item);
+                })
+            }).catch(function (msg) {
+                console.log(msg);
+
+            })
+    </script>
+</body>
+
+</html>

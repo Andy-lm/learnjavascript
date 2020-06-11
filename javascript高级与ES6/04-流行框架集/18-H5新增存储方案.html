@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>18-H5新增存储方案</title>
+</head>
+<body>
+<button class="save">存点cookie</button>
+<button class="send">发送请求</button>
+
+<button class="btn1">保存</button>
+<button class="btn2">删除</button>
+<button class="btn3">修改</button>
+<button class="btn4">查找</button>
+<button class="btn5">清空</button>
+
+<script src="js/jquery-1.12.4.js"></script>
+<script src="myAjax.js"></script>
+<script>
+    /*
+    1.什么是SessionStorage和LocalStorage
+    和Cookie一样, SessionStorage和LocalStorage也是用于存储网页中的数据的
+
+    2.Cookie、 SessionStorage、LocalStorage区别
+    2.1生命周期(同一浏览器下)
+    Cookie生命周期:         默认是关闭浏览器后失效, 但是也可以设置过期时间
+    SessionStorage生命周期: 仅在当前会话(窗口)下有效，关闭窗口或浏览器后被清除, 不能设置过期时间
+    LocalStorage生命周期:   除非被清除，否则永久保存
+
+    2.2容量
+    Cookie容量:         有大小(4KB左右)和个数(20~50)限制
+    SessionStorage容量: 有大小限制(5M左右) http://dev-test.nemikor.com/web-storage/support-test/
+    LocalStorage容量:   有大小限制(5M左右) http://dev-test.nemikor.com/web-storage/support-test/
+
+    2.3网络请求
+    Cookie网络请求:         每次都会携带在HTTP头中，如果使用cookie保存过多数据会带来性能问题
+    SessionStorage网络请求: 仅在浏览器中保存，不参与和服务器的通信
+    LocalStorage网络请求:   仅在浏览器中保存，不参与和服务器的通信
+
+    3.Cookie、 SessionStorage、LocalStorage应用场景
+    Cookie:         判断用户是否登录
+    LocalStorage:   购物车
+    sessionStorage: 表单数据
+
+    4.注意点:
+    无论通过以上那种方式存储的数据, 切记不能将敏感数据直接存储到本地
+    * */
+
+    $('.save').click(function () {
+        document.cookie = "myName=it666;path=/;domain=127.0.0.1;";
+    });
+    $('.send').click(function () {
+        ajax("18-cookie.php",
+            {},
+            3000,
+            function (xhr) {
+                console.log("请求成功", xhr.responseText);
+            }, function () {
+                console.log("请求失败");
+            });
+    });
+
+    $('.btn1').click(function () {
+        // sessionStorage.setItem("name", "lnj");
+        // sessionStorage.setItem("age", "34");
+        localStorage.setItem("name", "lnj");
+    });
+    $('.btn2').click(function () {
+        sessionStorage.removeItem("name");
+    });
+    $('.btn3').click(function () {
+        sessionStorage.setItem("name", "it666");
+    });
+    $('.btn4').click(function () {
+        let value = sessionStorage.getItem("name");
+        alert(value);
+    });
+    $('.btn5').click(function () {
+        sessionStorage.clear();
+    });
+
+</script>
+</body>
+</html>

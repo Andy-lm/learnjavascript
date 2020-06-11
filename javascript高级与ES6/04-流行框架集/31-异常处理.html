@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>31-异常处理</title>
+</head>
+<body>
+<script>
+    /*
+    1.JS中的异常
+    简单粗暴就是有错误出现
+    由于JS是单线程的, 编写的代码都是串行的,
+    所以一旦前面代码出现错误,程序就会被中断, 后续代码就不会被执行
+
+    2.JS中的异常处理
+    2.1自身编写代码问题, --> 手动修复BUG
+    2.2外界原因问题, --> try{}catch{}
+    对于一些可预见的异常, 我们可以使用try{}catch{}来处理,
+
+    3.JS中如何进行异常处理
+    利用try{}catch{}来处理异常可以保证程序不被中断, 也可以记录错误原因以便于后续优化迭代更新
+    try {
+        可能遇到的意外的代码
+    }
+    catch(e) {
+        捕获错误的代码块
+    }
+    * */
+    // function say(){
+    //     console.log("say");
+    // }
+    console.log("1");
+    try {
+        say();
+    }catch (e) {
+        console.log(e);
+    }
+    console.log("2");
+</script>
+</body>
+</html>

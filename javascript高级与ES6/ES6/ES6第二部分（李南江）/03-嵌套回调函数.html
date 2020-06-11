@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 发送一个请求按顺序执行1,2,3
+        function request(fn) {
+            // 代表三秒后才会执行回调函数
+            let timer = setInterval(function () {
+                fn('拿到数据啦');
+                clearInterval(timer);
+            }, 1000);
+        }
+        request(function (data) {
+            console.log(1, data);
+            request(function (data) {
+                console.log(2, data);
+                request(function (data) {
+                    console.log(3, data);
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>

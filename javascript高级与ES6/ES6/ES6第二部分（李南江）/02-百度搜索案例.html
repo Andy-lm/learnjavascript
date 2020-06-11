@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-1.12.4.js"></script>
+    <script src="js/myjsonp.js"></script>
+</head>
+
+<body>
+    <input type="text" placeholder="请输入要搜索的内容">
+    <ul></ul>
+    <script>
+        /*
+        jQuery11020058272919802664136_1591317225616({"q":"i","p":false,"g":[{"type":"sug","sa":"s_1","q":"iphone"},{"type":"sug","sa":"s_2","q":"iphone11"},{"type":"sug","sa":"s_3","q":"ipad"},{"type":"sug","sa":"s_4","q":"ip"},{"type":"sug","sa":"s_5","q":"iphone12什么时候上市"},{"type":"sug","sa":"s_6","q":"i potato you是啥意思"},{"type":"sug","sa":"s_7","q":"i potato you为什么是我喜欢你的意思"},{"type":"sug","sa":"s_8","q":"i potato you翻译"},{"type":"sug","sa":"s_9","q":"ios是什么意思"},{"type":"sug","sa":"s_10","q":"interop"}],"slid":"8080751915616767407","queryid":"0x36990db8650daf"})
+        */
+
+
+        /*
+        https://www.baidu.com/sugrec?prod=pc&from=pc_web&wd=i&cb=jQuery110203625215234575023_1591317905526
+        */
+        $('input').on('input', function () {
+            $.ajax({
+                url: "https://www.baidu.com/sugrec?prod=pc&from=pc_web&wd=" + this.value,
+                data: {
+                    "teacher": "lnj",
+                    "age": 34
+                },
+                dataType: "jsonp",
+                jsonp: "cb",  // 告诉jQuery服务器在获取回调函数名称的时候需要用什么key来获取
+                success: function (msg) {
+                    creatEitems(msg.g);
+                }
+            })
+
+        })
+        let $ul = $('ul');
+        function creatEitems(list) {
+            $ul.html('');
+            for (let i = 0; i < list.length; i++) {
+                let $li = $("<li>" + list[i].q + "</li>");
+                $ul.append($li);
+            }
+        }
+
+    </script>
+</body>
+
+</html>

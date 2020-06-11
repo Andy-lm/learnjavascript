@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>22-jQuery中jsonp使用</title>
+</head>
+<body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+    /*
+    当前网页的地址: http://127.0.0.1:63342/jQuery/Ajax/22-jQuery%E4%B8%ADjsonp%E4%BD%BF%E7%94%A8.html
+    当前资源的地址: http://127.0.0.1:80/jQuery/Ajax/22-jsonp.php
+    */
+    $.ajax({
+        url: "http://127.0.0.1:80/jQuery/Ajax/22-jsonp.php",
+        // url: "http://www.maomaoedu.com/test.php",
+        data:{
+            "teacher": "lnj",
+            "age": 34
+        },
+        dataType: "jsonp", // 告诉jQuery需要请求跨域的数据
+        jsonp: "cb",  // 告诉jQuery服务器在获取回调函数名称的时候需要用什么key来获取
+        jsonpCallback: "lnj", // 告诉jQuery服务器在获取回调函数名称的时候回调函数的名称是什么
+        success: function (msg) {
+            console.log(msg);
+        },
+        error: function (xhr) {
+            console.log(xhr.status);
+        }
+    });
+</script>
+</body>
+</html>

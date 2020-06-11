@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>25-JS是单线程的</title>
+</head>
+<body>
+<script>
+    /*
+    1.JS是单线程的
+    所以JS中的代码都是串行的, 前面没有执行完毕后面不能执行
+    */
+    /*
+    2.同步代码和异步代码
+    除了"事件绑定的函数"和"回调函数"以外的都是同步代码
+
+    2.1程序运行会从上至下依次执行所有的同步代码
+    2.2在执行的过程中如果遇到异步代码会将异步代码放到事件循环中
+    2.3当所有同步代码都执行完毕后, JS会不断检测 事件循环中的异步代码是否满足条件
+    2.4一旦满足条件就执行满足条件的异步代码
+    * */
+    /*
+    2.为什么JS是单线程的?
+    avaScript的单线程，与它的用途有关。
+    作为浏览器脚本语言，JavaScript的主要用途是与用户互动，以及操作DOM。
+    这决定了它只能是单线程，否则会带来很复杂的同步问题。
+
+    例如: 如果JS是多线程的
+    现在有一个线程要修改元素中的内容, 一个线程要删除该元素, 这时浏览器应该以哪个线程为准？
+    */
+    console.log("1"); // 同步代码
+    setTimeout(function () { // 异步代码
+        console.log("2");
+    }, 500);
+    console.log("3"); // 同步代码
+    alert("666"); // 同步代码
+    // 1 / 3 / 2
+    /*
+    // 系统添加代码模拟
+    let arr = [setTimeout(function () { // 异步代码
+        console.log("2");
+    }, 500)];
+    事件循环
+    let index = 0;
+    let length = arr.length;
+    while(true){
+        let item = arr[index];
+        if(item.time === 500){
+            执行异步代码
+        }
+        index++;
+        if(index === length){
+            index = 0;
+        }
+    }
+    */
+    /*
+    扩展阅读: https://segmentfault.com/a/1190000015042127
+    * */
+</script>
+</body>
+</html>

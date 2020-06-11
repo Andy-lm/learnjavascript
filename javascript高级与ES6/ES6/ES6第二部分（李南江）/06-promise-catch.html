@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let promise = new Promise(function (resolve, reject) {
+            console.log(1111);
+            resolve('请求成功1');
+            // reject('请求失败');
+        });
+        let promise2 = new Promise(function (resolve, reject) {
+            console.log(1111);
+            // resolve('请求成功2');
+            reject('请求失败1');
+        });
+
+        let p1 = promise.then(function (data) {
+            console.log(data);
+            return 'aaa';
+        })
+
+
+        let p2 = promise2.then(function (data) {
+            console.log(data);
+            return 'bbb';
+        }).catch(function (data) {
+            console.log(data);
+        })
+
+        let p3 = Promise.all([p1, p2]).then(function ([p1, p2]) {
+            console.log(p1 + 'all');
+            console.log(p2 + 'all');
+
+        }).catch(function (error) {
+            console.log(error + 'all');
+        })
+        // promise.all也可以返回一个新的promise对象
+        console.log(p3);
+
+    </script>
+</body>
+
+</html>

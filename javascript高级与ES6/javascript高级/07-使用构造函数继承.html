@@ -25,7 +25,11 @@
         }
         Son.prototype = new Father();
         Son.prototype.constructor = Son;
+        Son.prototype.play = function () {
+            console.log('jahahhaha');
+        }
         var lm = new Son('limao', 18);
+        lm.play();
         // console.log(lm.age);
         // lm.money();
         // 为父类的实例对象
